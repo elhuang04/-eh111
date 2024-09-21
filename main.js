@@ -13,28 +13,30 @@ links.forEach(link => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Collapsible on default, click to toggle
-    var coll = document.querySelectorAll(".collapsible");
-    var i;
-
-    // Expand all collapsible divs by default
-    for (i = 0; i < coll.length; i++) {
-        coll[i].classList.add("active"); // Add the "active" class
-        var content = coll[i].nextElementSibling;
-        content.style.maxHeight = content.scrollHeight + "px";
+function toggleDarkMode() {
+    const button = document.querySelector('.toggle-button');
+    const currentMode = document.body.classList.contains('dark-mode');
+    if (currentMode) {
+        document.body.classList.remove('dark-mode');
+        button.textContent = 'Dark Mode';
+    } else {
+        document.body.classList.add('dark-mode');
+        button.textContent = 'Light Mode';
     }
+}
 
-    // Toggle functionality remains the same
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-        });
+function toggleSideBar() {
+    const btn = document.querySelector('.collapsible');
+    const content = document.querySelector('.table-of-content-container');
+    // Instead of 'none', let's check if it's currently visible or not
+    if (window.getComputedStyle(content).display === 'none') {
+        content.style.display = 'block';
+        btn.style.marginLeft = "25vw";
+        btn.innerHTML = "Hide"
+    } else {
+        content.style.display = 'none';
+        btn.style.marginLeft = "0";
+        btn.innerHTML = "Show Table of Contents"
     }
-});
+}
+
