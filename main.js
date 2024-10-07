@@ -27,16 +27,19 @@ function toggleDarkMode() {
 
 function toggleSideBar() {
     const btn = document.querySelector('.collapsible');
+    const main = document.querySelector('.main');
     const content = document.querySelector('.table-of-content-container');
     // Instead of 'none', let's check if it's currently visible or not
     if (window.getComputedStyle(content).display === 'none') {
         content.style.display = 'block';
-        btn.style.marginLeft = "25vw";
-        btn.innerHTML = "Hide"
+        main.style.marginLeft = "15vw";
+        // btn.style.marginLeft = "25vw";
+        // btn.innerHTML = "Hide"
     } else {
         content.style.display = 'none';
-        btn.style.marginLeft = "0";
-        btn.innerHTML = "Show Table of Contents"
+        main.style.marginLeft = "5vw";
+        // btn.style.marginLeft = "0";
+        // btn.innerHTML = "Show Table of Contents"
     }
 }
 

@@ -1,12 +1,374 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <title>
-        Project 2
-    </title>
-    <head>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1</title>
+    <meta name="gc:theme" content="medium">
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="../../main.js"></script>
+    
+    <!-- google fonts used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- bootstrap libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
     <body>
-        This project doesn't exist yet...
-        Reuturn to home page <a href="../index.html">here</a>
-    </body>
+        <div class="navbar extend">
+            <div class="menu">
+                <a href="../index.html">🏠</a>
+                <a href="../project1/index.html">Project 1</a>
+                <a href="#project2">Project 2</a>
+                <a href="../project3/index.html">Project 3</a>
+                <a href="../project4/index.html">Project 4</a>
+                <a href="../project/5index.html">Project 5</a>
+            </div>
+            <div class="name">Elizabeth Huang</div>
+            <button class="toggle-button" onclick="toggleDarkMode()">Dark Mode</button>
+        </div>
+        
+        <div class="spacer"></div>
+
+        <div class="content extend">
+            <button type="button" class="collapsible" onclick="toggleSideBar()">
+                Show Table of Contents
+            </button>        
+            <!-- <button class="toggle-button" onclick="">Show Table of Contents</button> -->
+            <div class="table-of-content-container">
+                <button type="button" class="fixed-button collapsible" onclick="toggleSideBar()">Close</button>
+
+                <aside class="table-of-content">
+                    <h2 class="menu-heading scrollingElem">Table of Contents</h2>
+
+                    <!-- main menu of table of content -->
+                    <ul class="main-menu">
+                        <li class="menu-sub-heading">
+                            <a href="#1.0">1. Introduction</a>
+                        </li>
+
+                        <li class="menu-sub-heading">2. Honesty</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#2.1">2.1 Description</a></li>
+                            <li><a href="#2.2">2.2 Example of Virtue</a></li>
+                            <li><a href="#2.3">2.3 Connection With Technology</a></li>
+                        </ul>
+
+                        <li class="menu-sub-heading">3. Self-Control</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#3.1">3.1 Description</a></li>
+                            <li><a href="#3.2">3.2 Example of Virtue</a></li>
+                            <li><a href="#3.3">3.3 Connection With Technology</a></li>
+                        </ul>
+
+                        <li class="menu-sub-heading">4. Humility</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#4.1">4.1 Description</a></li>
+                            <li><a href="#4.2">4.2 Example of Virtue</a></li>
+                            <li><a href="#4.3">4.3 Connection With Technology</a></li>
+                        </ul>
+
+                        <li class="menu-sub-heading">5. Justice</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#5.1">5.1 Description</a></li>
+                            <li><a href="#5.2">5.2 Example of Virtue</a></li>
+                            <li><a href="#5.3">5.3 Connection With Technology</a></li>
+                        </ul>
+                        <li class="menu-sub-heading">6. Courage</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#6.1">6.1 Description</a></li>
+                            <li><a href="#6.2">6.2 Example of Virtue</a></li>
+                            <li><a href="#6.3">6.3 Connection With Technology</a></li>
+                        </ul>
+                        <li class="menu-sub-heading">7. Empathy</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#7.1">7.1 Description</a></li>
+                            <li><a href="#7.2">7.2 Example of Virtue</a></li>
+                            <li><a href="#7.3">7.3 Connection With Technology</a></li>
+                        </ul>
+
+                        <li class="menu-sub-heading">8. Care</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#8.1">8.1 Description</a></li>
+                            <li><a href="#8.2">8.2 Example of Virtue</a></li>
+                            <li><a href="#8.3">8.3 Connection With Technology</a></li>
+                        </ul>
+
+                        <li class="menu-sub-heading">9. Civility</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#9.1">9.1 Description</a></li>
+                            <li><a href="#9.2">9.2 Example of Virtue</a></li>
+                            <li><a href="#9.3">9.3 Connection With Technology</a></li>
+                        </ul>
+
+                        <li class="menu-sub-heading">10. Flexibility</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#10.1">10.1 Description</a></li>
+                            <li><a href="#10.2">10.2 Example of Virtue</a></li>
+                            <li><a href="#10.3">10.3 Connection With Technology</a></li>
+                        </ul>
+
+                        <li class="menu-sub-heading">11. Perspective</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#11.1">11.1 Description</a></li>
+                            <li><a href="#11.2">11.2 Example of Virtue</a></li>
+                            <li><a href="#11.3">11.3 Connection With Technology</a></li>
+                        </ul>
+
+                        <li class="menu-sub-heading">12. Magnanimity</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#12.1">12.1 Description</a></li>
+                            <li><a href="#12.2">12.2 Example of Virtue</a></li>
+                            <li><a href="#12.3">12.3 Connection With Technology</a></li>
+                        </ul>
+
+                        <li class="menu-sub-heading">13. Wisdom</li>
+                        <!-- submenu  -->
+                        <ul class="sub-menu">
+                            <li><a href="#13.1">13.1 Description</a></li>
+                            <li><a href="#13.2">13.2 Example of Virtue</a></li>
+                            <li><a href="#13.3">13.3 Connection With Technology</a></li>
+                        </ul>
+                        <li class="menu-sub-heading">
+                            <a href="#14.0">14. Conclusion</a>
+                        </li>
+                        <li class="menu-sub-heading"></li>
+                            <a href="#ref">References</a>
+                        </li>
+
+
+                    </ul>
+                </aside>
+            </div>
+            <main class="main" style="margin-left:5vw; margin-right:5vw">
+    
+                <!-- section -->
+                <p>
+                    <h2 id="1.0">1. Introduction</h2>
+                    In everyday interactions, using technology has become inseparable from one’s daily tasks. In Shannon Vallor’s <em>Technology and the Virtues: A Philosophical Guide to a Future Worth Wanting,</em> Vallor draws from traditional virtue ethics frameworks, asserting that the good life remains achievable if we each actively shape our character. As emerging technology continues to develop in unpredictable ways, Vallor urges the need to build foundations beyond individual flourishing for society’s collective wellbeing and understand how to integrate new technologies into our lives by using them wisely.  To demonstrate the essence of Vallor’s virtue ethics and how they transfer into our technomoral decisions, the following sections exemplify applications of each trait in animated films.
+                    <h2 id="2.0">2. Honesty</h2>
+                    <h3 id="2.1">2.1 Description</h3>
+                    Universally, honesty is a fundamental moral ideal necessary to flourish with others. To express this definition more clearly, Vallor (2018) defines honesty to be “an exemplary respect for truth, along with the practical expertise to express that respect appropriately in technosocial contexts” (p. 122). The moral ideal of honesty, Vallor distinguishes, is to establish integrity in the appropriate conduct, rather than a complete truth used for vicious intent. In a technomoral context, Vallor extends technomoral honesty to have the most significance in our relation with information, communication, and privacy.
+
+                    <h3 id="2.2">2.2 Example of Virtue</h3>
+                        <img src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150608-27674-emufu7_cb6dc499.jpeg?region=0%2C0%2C1580%2C880">
+                        <p>
+                            Actions of honesty are often more representative of one’s virtue than words. A character that exemplifies Vallor’s honesty is Ralph from <em>Wreck-It Ralph</em>. The film outlines Ralph’s villain-to-hero transformation through a series of self-reflection experiences. Ralph begins the film questioning the significance of his role, yearning for a more purposeful life through an acknowledgement of his work. Initially tactful, Ralph does not directly confront any of his co-workers, other characters in the same game, about his long-standing dissatisfaction with his treatment, knowing that speaking directly about it might further tension and worsen the relationships he has with others. However, after being socially instigated, Ralph expresses all his grievances about constantly being put in a “bad guy” role with no respect or recognition for his work, in addition to his exclusion from the group even after work hours. Ralph’s main objective for the movie becomes seeking to win a medal to prove his capability to be a hero (“good guy”), a proof of validation he belongs in the community with everyone else. By the end of the movie, Ralph realizes that bottling all his emotions doesn’t strengthen the connection he has with others; he finally shares a heartfelt sentiment with one of his coworkers about a mutual understanding through their shared experiences of feeling excluded. The movie concludes with Ralph stating, “I don’t need a medal to tell me I’m a good guy” (Moore, 2012). Ralph embodies honesty as he learns to be vulnerable and share his feelings more honestly, an action that deepens the relationships he shares with others. A key takeaway from the film is the importance of expressing honesty appropriately: sharing our truths without causing harm; knowing when to speak up and when to listen.
+                        </p>
+                    <h3 id="2.3">2.3 Connection With Technology</h3>
+                        <p>
+                            Ralph’s character embodies honesty in two critical technomoral contexts: 1) an internal honesty or self-honesty, and 2) an external honesty towards others. As the film revolves around a plot of internal conflict, much of the movie shares Ralph’s journey to accepting his role in the game world, the purpose of his actions, and how his actions affect those around him. Rich Moore, the director of the film, clarifies, “They're just gonna accept who they are, and that would be the message in the film, it's okay to be who you are” (MacQuarrie, 2012). In a technomoral context, this means being honest about your role and contributions to the technological world. For instance, an awareness of the data we create and use, and the information we choose to provide for a more convenient service. Secondly, Ralph demonstrates the difficulty of finding balance with external honesty through his attempts in connecting with others in his community. In the lens of technology, Ralph’s reluctance to share certain personal information mirrors our rationalization to share or protect our data privacy. Thus, honesty becomes an essential virtue that extends into our technological existence, enabling us to flourish in our own lives and with others.
+                        </p>
+
+                    <h2 id="3.0">3. Self-Control</h2>
+                    <h3 id="3.1">3.1 Description</h3>
+                        With increasing technological innovations pulling us with distractions in every direction, new innovations such as screen time and minimal/ dumb phones suggest a need for limiting our interaction with technology. To define, Vallor describes self-control in the traditional sense as a “willful restraint of wrong desire,” (p.123) and a “deliberate cultivation of right desire” (p.123). To capture the importance of self-control in a technomoral context, Vallor demonstrates increasing desire and consumption of virtual goods across frequently used applications and games. In more detail, Vallor presents technomoral self-control as the ability to consciously and carefully consider authentic desires that contribute to the holistic one’s well-being (pp.123-125). 
+                    <h3 id="3.2">3.2 Example of Virtue</h3>
+                        <img src="https://vignette.wikia.nocookie.net/disney/images/c/c1/Microbots_2.jpg/revision/latest?cb=20150216185801">
+                        <p>
+                            Based on real-world examples in innovation, the film <em>Big Hero 6</em> is a coming-of-age film exploring concepts of self-control (in a technomoral context) with new technological developments. The protagonist of the film, Hiro, is a teenage robotics prodigy who loves to compete in illegal robot fights. With the help of his brother and his peers, Hiro learns the importance of responsible design and engineering as the film progresses. The self-control that Hiro cultivates through the film is directly juxtaposed with that of the antagonist, Professor Robert Callaghan, who uses technology to fulfill his own desires, harming those around him in the process. At the beginning of the film, a new innovation is introduced: Hiro creates microbots that are capable of linking together via commands from a neural transmitter. Hiro showcases this project at a university’s admissions event, boasting its limitless potential to make progress in areas of construction, transportation, manual labor, and more. Much later in the film, we discover that the microbots have been stolen by Professor Callaghan to seek revenge on a former colleague. Blinded by grief and rage, Callaghan activates dangerous and unstable technology with the goal of demolishing his former colleague’s headquarters. In contrast, Hiro’s self-control is continuously cultivated throughout the film with the support of his brother’s intention: Baymax, a personal healthcare companion robot designed only for the protection and safety of its users, which prevents Hiro from making impulsive or harmful decisions (Hall, Williams, 2014).
+                        </p>
+                        
+                        <h3 id="3.3">3.3 Connection With Technology</h3>
+                        <img src="https://www.heinzhistorycenter.org/wp-content/uploads/2018/08/2_atkeson.jpg">
+                        <p>
+                            In both film and real-life, Baymax is intentionally designed to facilitate flourishing with others. The research project that led to Baymax began at Carnegie Mellon, led by Professor Chris Atkeson, with Atkeson’s research on soft robotics. Atkeson’s design for a robotic arm leveraged soft materials including fabrics, light balloons, and light plastics to extend greater safety when operating near or on people (CMU, 2014). In this core design decision (in both the character and the research), several aspects of self-control are embedded into the technology. First, Atkeson’s expertise in robotics provides him with the tools to assess how his creations might be dangerous to others. His research considers alternatives to conventionally metal robots in order to create robots that both move scientific research forward and contribute to the wellbeing of others.
+                        </p>
+
+                    <h2 id="4.0">4. Humility</h2>
+                    <h3 id="4.1">4.1 Description</h3>
+                    <p>
+                        In traditional cultural contexts, Vallor describes humility as an essential self-assessment of one’s character, crucial for personal growth and self-improvement (pp.125-126). When we apply this concept to the technological realm, humility takes on a broader meaning. It becomes an acknowledgment of our current knowledge and expertise, as well as an awareness of our limitations. Vallor distinguishes that new innovations are a fallacy for mastery, lending a blindness to the unresolved gaps of current technological solutions. With new tools being constantly developed, maintaining rationality by weighing the risks and rewards is essential for embracing technological change. Humility becomes a critical intermediate in our process of assessing new technologies: to understand its benefits and consequences more thoroughly before accepting them into our lives.
+                    </p>
+                    <h3 id="4.2">4.2 Example of Virtue</h3>
+                    <img src="https://c4.wallpaperflare.com/wallpaper/69/206/450/brave-pixar-wallpaper-preview.jpg">
+                    <p>
+                        Merida, the protagonist in Disney Pixar’s 2012 animated film <em>Brave</em> exhibits humility as she learns to lead her kingdom. Merida, a headstrong, defiant, and rebellious teenager begins the film with a challenge: needing to take on royal responsibilities as a princess of her kingdom. Wanting to set her own rules for life, Merida refuses to perform her duties crucial to forming alliances with neighboring clans. Merida’s mother strongly disapproves of Merida’s actions and warns her of the threat of diplomatic harm on her people. As a result, their already strained relationship continues to worsen causing Merida to curse her mother with an unknown effect. The curse transforms her mother into a bear, requiring Merida to quickly find a solution to turn her mother back into a human. Over the course of the film, Merida and her mother (in bear form) get closer together in the process of trying to survive in nature while Merida finds a way to undo the curse. Navigating the forest together, Merida observes Elinor’s wisdom, grace, and selflessness. She realizes that strength isn’t solely based on mastery over archery skills or physical prowess; it’s also about understanding, compassion, and vulnerability. Merida cultivates humility when realizing her mistakes and following through by taking responsibility for the consequences of her actions. Throughout the course of their days spent in nature, Merida grows an appreciation for the effort her mother takes to support both the family and the kingdom. With a renewed mother-daughter relationship, Merida breaks the curse with the love she has gained for her mother (Andrews, Chapman, 2012). This action reveals the true nature of the curse to “Mend the bond torn by pride”(Disney News, 2018). In essence, Merida displays humility in her admission of her mistakes and acknowledging the areas she can learn from her mother in.    
+
+                    </p>
+                    <h3 id="4.3">4.3 Connection With Technology</h3>
+                    <p>
+                        Throughout <em>Brave</em>, hunting and the use of bow and arrows to defend the kingdom as a security measure are ubiquitous. Given that the movie takes place in the 10th century, there are many new technological advancements that have taken the place of those same tools. Currently, many royal families including Prince Harry and Meghan Markle and the Duke and Duchess of Sussex spend roughly $2-3 million annually to keep their families safe (Chmielewski, 2021). Thus, one could imagine, if the movie were to take place in a 21st century setting, that the kingdom might integrate smart home security systems to better protect families. These modern systems provide reassurance through features like efficient emergency response handling, comprehensive protection against environmental threats, and remote monitoring accessible from any mobile device. While these smart systems offer many affordances to safety and security, they are not without limitation. While they enhance safety, constant video monitoring poses privacy risks; sensitive information or contents may become prone to exposure and be captured inadvertently. Moreover, detection algorithms are still evolving, striving to improve accuracy in identifying video content. So, even in this high-tech kingdom, balancing security and privacy remains an ongoing challenge. 
+                    </p>
+
+                    <h2 id="5.0">5. Justice</h2>
+                    <h3 id="5.1">5.1 Description</h3>
+                    While justice varies in definition in traditional contexts, the following concepts are universally central to the role of justice in ethics: deserved action and humane benevolence (pp.127-128). By extension, we can converge our understanding of technomoral considerations to ideas of rightness, fairness, and responsibility. Vallor formalizes this definition with two key components: 1) a just, fair, and deserved access to technology, and 2) a concern for the impacts of technology on others. It follows that the first step to achieving greater technomoral justice begins with designing and developing technology more fairly and responsibly.
+
+                    <h3 id="5.2">5.2 Example of Virtue</h3>
+                    At its core, <em>Coco</em> is a film that revolves around Miguel, a young boy who embarks on a journey to the Land of the Dead to uncover his family’s hidden past. Despite a strict ban to play music in his household, playing guitar is one of Miguel’s secret and most treasured hobbies he learned through his idol, the late musician Ernesto. Believing that Ernesto may also be a family relative, Miguel plays Ernesto’s guitar, which brings him into the Land of the Dead. His quest to find Ernesto leads him to Héctor, who offers assistance in exchange for a favor: placing his photo with his living family before they forget him. As the story unfolds, Miguel discovers that Ernesto stole Héctor’s songs and that Héctor is his great-great-grandfather. The two were once a music duo, but Ernesto poisoned Héctor, took his guitar, and claimed Héctor’s songs as his own. In the end, Miguel plays one of Héctor’s songs, “Remember Me,” to his great-grandmother (Héctor’s daughter), Coco, serving justice to Hector’s songwriting and revealing the truth about their family lineage (Unkrich, 2017). This action demonstrates Vallor’s definition of justice as it demonstrates both a deserved action and human benevolence. Miguel’s song choice and performance exhibits deserved action as it grants ownership of Héctor’s songs back into his family, rightfully credited to Héctor. Additionally, it demonstrates human benevolence through bridging the gap in connecting with his great-grandmother, a song that has a deep personal meaning to her.
+                    <h3 id="5.3">5.3 Connection With Technology</h3>
+                    Just as Miguel’s great-great-grandfather Héctor struggled to be recognized as the rightful songwriter for his songs, today’s music faces many of the same challenges. Digital music streaming platforms are a modern-day utility for Vallor’s definition of  justice: democratizing access to new music for audiences worldwide, while reserving rights (copyright, credit rights) to the original artist. Moreover, when potential creative plagiarism or unauthorized use arises, justice prevails through rigorous reviews for copyright infringement. Platforms such as YouTube use an automatic “Copyright Match Tool” to check for similarities of a video compared to all other videos distributed on their platform (Google, n.d.). And beyond the streaming services themselves, additional safeguards for creative integrity and intellectual property unfold through lawsuits, where fair use and equitable distribution cases are further examined. 
+                    
+                    
+                    <h2 id="6.0">6. Courage</h2>
+                    <h3 id="6.1">6.1 Description</h3>
+                    Courage, in the classical sense, is consistent fear of wrongness outweighing the fear of taking risks to act rightly (p.129). In more detail, to act rightly means to maintain the fortitude for goodness of considerable moral weight. With cases that are comfortable, where the threat to our dignity is not present, there is a demonstration of a lack of moral courage. Now, in a technosocial life, each new piece of technology presents new risks in our choices. Technomoral courage, as Vallor describes is a “reliable disposition toward intelligent feat and hope with respect to the moral and material dangers and opportunities presented by emerging technologies” (p. 131). While traditional moral courage may allow us to assume a continuation of the status quo, addressing technomoral issues requires confronting the implications of each choice.
+                    <h3 id="6.2">6.2 Example of Virtue</h3>
+                    <img src="https://www.nerdevil.it/wp-content/uploads/2021/04/luca-disney-pixar-mostri-marini.jpg">
+                    <p>
+                    A film central around Vallor’s definition of courage, is <em>Luca</em>, a film narrating the challenge of breaking barriers of prejudice in public perception. The film revolves around a friendship between two sea monster kids, Luca and Alberto. Both friends faces a two-pronged challenge: the fear of revealing their true identities as a sea monsters and the desire to explore the human world. In relation to Vallor’s definition, their fears of wrongness, being rejected or harmed, outweigh the risk of exploring human society to the fullest extent. With the safety of each other as friends, both muster the courage to transform into humans and make progress towards their personal goals, despite the risk of revealing themselves if in contact with water. As they explore the world as friends, they become closer with townspeople prejudiced against sea monsters, who initially view sea monsters as dangerous creatures. Eventually, both Luca and Alberto are exposed by rain, revealing their sea monster forms to those in the town, and challenging their current perceptions. In this action they risk rejection, ridicule, and even harm. Their actions align with Vallor’s idea of courage—choosing to confront societal norms and assumptions notwithstanding risk. Ultimately, their courage allows them to be accepted into human society and achieve goals they once thought impossible (Casarosa, 2021).
+                    </p>
+                        <h3 id="6.3">6.3 Connection With Technology</h3>
+                    Similarly, revealing unethical practices within an organization or company when sensitive even with consideration of the jeopardy on your future can equally be seen as an exercise of Vallor’s courage. A notable example of this act is Edward Snowden’s public reveal of the National Security Agency’s (NSA) data collection practices. Snowden, a former contractor of the NSA, stole several classified documents that bring to light “the agency’s invitations of privacy” and sensitive personal data collected that exceeds the extent of the agency’s authority (Board, 2014). These actions had permanent repercussions as Snowden now finds himself avoiding a charges of espionage, theft, and potential permanent exile by living in Russia. However, the positive impact Snowden has made for cybersecurity standards is unprecedented. According to Snwoden’s mass collection of data, the NSA broke privacy laws several thousand times a year, including personal data of American citizens. Additionally, Snowden’s actions have greatly impacted regulations in both intelligence agencies and in tech corporations, which now encrypt their web traffic for greater security measure (Davies, 2019). Thus, Snowden’s actions while immensely risky for the safety of his own personal life, showcase a great deal of technomoral courage: challenging the current practices of data collection and shaping the way for a safer and more ethical future in the field.
+
+                    <h2 id="7.0">7. Empathy</h2>
+                    <h3 id="7.1">7.1 Description</h3>
+                    Distinctly, Vallor describes empathy as a form of “co-feeling” or compassion shared with another person rather than the support or concern felt for another person (pp. 132-133). Empathy, as a moral virtue, is a complete understanding of another to be moved by both joys and pains, the ability to learn or cultivate dispositions that expand our capacity to feel for another (134-137). As defined in a technomoral context, Vallor states empathy as the “cultivated openness to being morally moved to caring action by the emotions of other members of our technosocial world” (p. 133). Dependent on others, extracting the right degree of empathy for certain situations or contexts is increasingly challenging without a collective cultivation of empathy in others.
+
+                    <h3 id="7.2">7.2 Example of Virtue</h3>
+                    An example of a character that displays empathy (as defined by Vallor) is Sadness from Inside <em>Out</em>. The film follows the main character, Riley, as she moves to a new home, leaving behind memories and people from her old home. Sadness is one of the personified emotions that co-feels with Riley; she and Riley processing feelings of loss, poignancy, and heartache together as separate characters. What’s particularly striking is that Sadness is uniquely attuned to the depths of Riley’s emotions. While the other emotions prioritize their own desires for Riley’s future, they often rely too heavily on Riley’s self-regulation of her own emotions, dismissing Riley’s feelings when they don’t align with their own goals. This accumulation of this neglection leads to Riley’s emotional state spiraling out of control into depression. While in the state of depression, Saddness is the only character capable of pulling Riley back to reality. To achieve this, Sadness actively engages with Riley’s emotions, fully embodying empathy for Riley’s current feelings, even when they’re challenging (Docter, 2015). Her compassionate actions, such as comforting other characters and supporting Riley during tough moments, underscore the transformative power of empathy.
+                    <h3 id="7.3">7.3 Connection With Technology</h3>
+                    Better know for its harms, social media and technology driven communications are perceived as communication tools that strip the sincerity of our in-person interactions away. According to a study conducted at the Harvard T.H. Chan School of Public Health, routine social media use as seen in our everyday lives and interacting with others on the platform via sharing or commenting is associated with social well-being, positive mental health, and self-rated health. 
+
+
+                    <h2 id="8.0">Care</h2>
+                    <h3 id="8.1">8.1 Description</h3>
+                    Simply defined, care is meeting the needs of others. Effective care for someone requires a reliable or routinely labor rather than an immediate or ephemeral compassion. Further, moral development is dependent on one’s active response to the needs of others. Lending this definition in the scope of technology, Vallor describes care to mean “a skillful, attentive, responsible, and emotionally responsive disposition to personally meet the needs of those with whom we share our technosocial environment” (p.139).  Consequently, relying on technological shortcuts for human care may come at a moral cost. Without genuine human interactions where we experience mutual dependence, vulnerability, and gratitude, we are unable to fully cultivate our moral selves. 
+                    
+                    <h3 id="8.2">8.2 Example of Virtue</h3>
+                    In <em>Ratatouille</em>, the film revolves around the friendship between a rat, Remy, and a waiter, Linguini. Over the course of the film, Remy develops a special care for Linguini and extends his care beyond his own desires of becoming a chef. He helps Linguini, starting in the restaurant as a kitchen assistant, by guiding his cooking. Ultimately, their teamwork brings out the best of Remy’s culinary skills and Linguini’s social skills to elevate the dining experience for all patrons at the restaurant. Their professional collaboration did not come without challenges: Linguini constantly has to challenge the norm that rats can’t cook to other cooks/ employees and Remy incessantly persuades to his family that not all humans seek to kill rats. Both of them persist and help one another work through their respective challenges, laboring tirelessly to achieve each of their dreams (Bird, Pinkava, 2007). Together, their partnership exemplifies mutual dependence; they need each other to bring out innovation and magic in the kitchen. As each of them routinely depend on one another’s skills and labor to help out the other, their actions and partnership are the epitome of Vallor’s definition for care. 
+
+                    <h3 id="8.3">8.3 Connection With Technology</h3>
+                    Drawing on the mutual partnership between Remy and Linguini, today’s technology embeds many forms of care through social media interactions. When interacting with a particular platform or interface, developers and designers uphold responsibility to care for users by protecting their privacy, data, and psychology safety. Equally, when interacting with platforms, users need act with a certain threshold of care to meet community guidelines and provide a positive or entertaining experience for other users.
+
+
+                    <h2 id="9.0">9. Civility</h2>
+                    
+                    <h3 id="9.1">9.1 Description</h3>
+                    At the beginning of the chapter, Vallor provides a local definition of civility: a sincere approach to live well with others, to collectively converse about policy, to “defend our distinc concepts of the good life”, and to work towards shared goods of technosocial life (p.141). Uniquely, the scope of civility as a virtue expands beyond the private, individual morality and broadens to a public and political moral character. Thereforce, to cultivate the chaacter of technomoral civlity is to flourish together as a globally networked society.
+                    
+                    <h3 id="9.2">9.2 Example of Virtue</h3>
+                    <em>WALL-E</em> demonstrates civility not only through the protagonist, WALL-E’s actions, but additionally through the design of his character. WALL-E’s sincerity shines through in his interactions with other robots, junk/ discarded items, people, plants, and other discoveries. His curiosity about the remnants of human civilization, like the Rubik’s Cube or the old VHS tape, reveals a genuine desire to connect with others and restore society as it was in the past. When he meets EVE, a more modern robot, his persistence in showing her the plant he found demonstrates his commitment to shared discovery and understanding that might promote others towards achieving the same goal. In the film, WALL-E’s ultimate mission is to clean up Earth and make it habitable again. He’s not just doing it for himself; he’s doing it for the collective good of all beings (including the humans who left). His selflessness stretches beyond the an individual scale: even when faced with adversity (like the spaceship’s autopilot system), he persists in doing what’s right, pushing the boundaries of civility beyond his own existence (Stanton, 2008). By connecting with EVE, challenging the status quo, and ultimately helping humanity return to Earth, WALL-E contributes to a more interconnected and responsible world.
+                    <h3 id="9.3">9.3 Connection With Technology</h3>
+                    An example of current technologies that aim to cultivate civility are computer vision systems used in manufacturing and supply chain plants. In these specialized systems, software allows facility managers to accurately track and analyze the entire lifecycle of products, from raw materials sourcing to end-of-life disposal to better understand areas where environmental harms, energy/ resource usage, and general employee safety can be improved (Gleiser, Laurens, 2023). By more precise monitoring in their own practices, hardtech companies can make informed decisions on sustainable practices that improve the health and safety of employees and global consumers. Technomoral civility involves sincere collaboration to achieve shared goods in our interconnected world; computer vision, when applied to sustainability, contributes to shared goods like environmental protection, waste reduction, and resource efficiency. By collectively addressing these challenges, computer vision technology assists with exercising collective civility.
+
+                    <h2 id="10.0">10. Flexibility</h2>
+                    
+                    <h3 id="10.1">10.1 Description</h3>
+                    Contrary to the idea of flexible moral nature (lacking in virtue), flexibility in a virtuous context is to modulate action, belief, and feeling under new conditions (p.145). The difference between flexible moral character and flexibility as a virtue is the tolerance of new situations without compromise of character. Accordingly, technomoral flexibility in a collective, global practice embeds an additional requirement: a disposition to refrain from beliefs that do not cultivate practical wisdom. In other words, a global technomoral flexibility demands downselecting criteria for flexibility that hinge on the interests of global civility and flourishing.
+
+                    <h3 id="10.2">10.2 Example of Virtue</h3>
+                    <em>Elemental</em> is a film about adapting yourself to fit new environments. Throughout the film, the protagonist Ember, comes from a family with long-standing traditions. Their environment, Element City, is a place where fire, water, land, and air residents live side by side. Ember deeply appreciates her parents’ sacrifices who left their homeland to provide her with a better life. Thus, she truly looks up to her family and is reluctant to change her ways to adapt to new technological changes that are making her parents’ lives difficult. Ember meets Wade, someone who always goes-with-the-flow, and their personalities are a perfect complement to one another. Through their interactions, differences in their attitudes and personalities spark Ember to reevaluate her approach to life. As their relationship strengthens into something more meaningful, Wade’s adaptability rubs off on Ember and she begins to consider a future beyond the traditions she once saw and embrace how her unique skill sets and talents could embrace change.
+
+                    <h3 id="10.3">10.3 Connection with Technology</h3>
+                    Flexibility as demonstrated with personal adaptability in <em>Elemental</em>, can extend to a flexibility with using and understanding new technology. For instance, older adults might find it difficult to change their current manual processes with automations or digital tools even when they might benefit from them. To encourage greater flexibility in this area, community programs and family members initiate practices of technomoral flexibility by asking older adults and family members to learn and engage with new technological tools that may be necessary to sustain the relationships most important to them. 
+
+                    <h2 id="11.0">11. Perspective</h2>
+                    
+                    <h3 id="11.1">11.1 Description</h3>
+                    Stated simply, perspective is the attention and understanding to parts of a moral whole (p.149). Beyond the technosocial definition, perspective is an understanding of self in place of a larger context. To cultivate and exercise perspective, one needs to relate individual needs and desires to those of others. Moreover, in a technomoral context, cultivating perspective needs an underlying understanding of the habits that are conducive to self-cultivation, technosocial conditions are essential to flourishing together, and a bigger picture view of the good life.
+
+                    <h3 id="11.2">11.2 Example of Virtue</h3>
+                    Challenging others perspective to open conversation for the understanding of new contexts is a key message in <em>Horton Hears a Who</em> (Suess, 1954). The main plot of the film revolves around Horton, an elephant, who hears a sound from a seemingly invisible speck of dust. Horton tries to convince others around him that an entire community of people are resident on the speck and takes upon himself a role as a protector to ensure that those people are kept safe. This story illustrates perspective by showing how Horton relates his individual actions to the needs and desires of the Whos (Hayward, Martino, 2008). He challenges the perspectives of others, opening conversations to understand new contexts. Horton’s actions demonstrate an understanding of self in a larger context, emphasizing the importance of considering others’ needs and the bigger picture of the good life. This aligns with the technomoral definition of perspective, which involves self-cultivation, technosocial conditions, and a broader view of flourishing together.
+
+                    <h3 id="11.3">11.3 Connection With Technology</h3>
+                    Personalization algorithms integrated into our everyday platforms create “bubbles,” content identified as similar in terms of interest areas, opinions, lifestyles, and more (Berman, Katona, 2020). Consequently, social media platforms form echo chambers, where users are exclusively exposed to content that aligns with their existing beliefs. This phenomenon raises a blocker to global cultivation of perspective as these algorithms restrict our understanding of ourselves within the larger world context. The virtue of perspective encourages us to actively seek out diverse viewpoints, engage in respectful dialogue, and critically examine our own biases. Vallor’s definition of perspective prompts us to consider how social media algorithms shape our perspectives and whether they hinder or enhance our ability to engage with differing opinions. These bubbles and biases influence our worldview, limiting our ability to relate individual needs and desires to those of others, and ultimately, our capacity to cultivate a broader, more inclusive understanding of the world. By implementing new or different processes or systems to allow people to explore outside their worldview, we can foster a more comprehensive global perspective, essential for flourishing together in a technomoral context.
+
+                    <h2 id="12.0">12. Magnanimity</h2>
+                    
+                    <h3 id="12.1">12.1 Description</h3>
+                    In the classical moral context, Vallor defines magnanimity to be an entitled sense of political and personal superiority. In more detail Vallor descries the magnimous person as someone who is not concerned with ego-involved contests and instead places value on intangible goods and actions that helps themselves flourish (p.152). By extension, moral leaders possess magnimity in their leadership, providing “courage, deep wisdom, expansive empathy, extraordinary care, and tolerance for great frustration and conflict— because they have successfully cultivated these virtues as resources for such projects” (p. 153). In a technomoral context, magnimity presents itself through global leaders of technology that facilitate the global community to flourish. However, Vallor states her observation that there is a lack of global technomoral leadership in the status quo, hindering any potential fruition from its cultivation or exercise.
+                    
+                    <h3 id="12.2">12.2 Example of Virtue</h3>
+                    The film Monsters University, is a film showcasing the journey of an unconventional team challenging the status quo. In the film, Mike is an ambitious young monster who dreams of becoming a top scarer. However, he faces a significant challenge: he lacks the natural scare abilities possessed by his peers. Despite this setback, Mike doesn’t give up. The protagonist Mike Wazowski demonstrates magnanimity through his actions leading his team through “Scare Games,” a series of competitions between students to compare the scare skills of each team. Rather than fixating solely on winning the Scare Games (a series of competitions among students), Mike focuses on intangible qualities. He doesn’t engage in petty rivalries or ego-involved contests. His goal isn’t just personal glory; he wants to prove that hard work, determination, and teamwork matter more than innate talent. To strengthen the bond between his teammates, Mike brings his team on a field trip to a nearby Monsters Inc facility. As one of the top scaring companies in this fictional world, his teammates have looked up to these professional scarers in hopes of one day joining the industry alongside them. At the facility, Mike inspires his team by asking them to see what professional scarers have in common. He continues by adding that professional scarers do not have anything in common. In fact, each monster in a professional scaring role is hired because of their unique attributes and qualities rather than a single common characteristic that might qualify them as “scary.” Initially a team of misfits, Mike embodies magnanimity to to support his teammates even when they doubt themselves. His leadership isn’t about dominating others; it’s about fostering a sense of community and shared purpose. Just like Vallor’s vision of technomoral leaders, Mike exemplifies virtues that benefit the greater community.
+                    
+                    <h3 id="12.3">12.3 Connection With Technology</h3>
+                    Earlier this year, in the senate hearing involving CEOs from big tech corporations including X, Meta, and TikTok, lawmakers questioned the online safety standards set by these leading companies and how they can effectively be improved (Rosenblatt et al., 2024). As Vallor points out in this chapter, while there is a lack of technomoral leadership to lead us through new changes in technological advancements, tech executives setting industry standards through new safety terms and features for collective benefit is a demonstration of the plausibility for technomoral leadership guided by virtue ethics.
+
+
+
+                    <h2 id="13.0">13. Wisdom</h2>
+                    
+                    <h3 id="13.1">13.1 Description</h3>
+                    <p>
+                    Wisdom, is a collection of all above virtues. It is an integrated moral expertise of an exemplary person who reliably practices moral habits and “[uses] those habits to cultivate and integrate the virtues essential to flourishing in their given moral world” (p. 154). Technomoral wisdom differs from all other virtues as it is a general condition and outcome of well-cultivated and practiced moral expertise. To obtain this condition demands both an individual and collective expression of each of the other virtues of character for the purpose of living well with new technology (pp.154-155). 
+                    </p>
+
+                    <h3 id="13.2">13.2 Example of Virtue</h3>
+                    <img src="https://wallpaperaccess.com/full/3854900.jpg">
+                    <p>
+                    A prerequisite for wisdom is the culmination of all other virtues. Having centuries of experience in practicing martial arts and training others, this character’s deep understanding of life is shared in his pieces of advice to his students. In <em>Kung Fu Panda: In the Valley of Peace</em>, the protagonist, Po, is guided by an all-wise master, Master Oogway. The film begins with Oogway choosing Po as the next “Dragon Warrior,” the next master-in-line to take on new students and pass on his wisdom. His famous quote—“Yesterday is history, tomorrow is a mystery, but today is a gift” (Osborne, Stevenson, 2008) —encourages Po to put his attention on events in the present. Po, initially seen as a clumsy panda, evolves into a hero. Oogway’s wisdom lies in nurturing potential and allowing growth to unfold. Just as Oogway shares his wisdom with Po and others, technomoral wisdom requires a shared commitment to ethical living in the digital age.
+                    </p>
+                    <h3 id="13.3">13.3 Connection With Technology</h3>
+                    In the status quo, we have unprecedented access to information. Large repositories like ChatGPT, search engines, and databases provide vast amounts of data. However, as Vallor defines, wisdom isn’t simply information but an experienced collection of exemplary moral cultivation. As the advancement of AI encourages continued application of technology in new contexts, the vision of Artificial General Intelligence (AGI), AI that can be applied generally to any problem or query becomes closer towards reality. While the goal of AGI is for technology to emulate human-like rational and ethical decision-making, large and unreliable information stores such as LLMs, ChatGPT, and commercially available AI tools are inadequate for ethical decision-making (Mucci, Stryker, 2024). They reflect historical actions rather than acting as standalone entities capable of cultivating virtue ethics.
+
+
+                    <h2 id="14.0">14. Conclusion</h2>
+                    Throughout this project, I’ve been able to exapnd my worldview on ethics in 21st-century technomoral concerns and better understand the nuances in the different dimensions of ethics beyond simply “good” and “bad” technology. This project has made me think more deeply about my individual actions on the larger scale, demonstrating the bigger picture implications that can arise from collective transformation. On the artistic aspect of this project, I’ve come to appreciate how mass media serves as a reference point in communicating ethical viewpoints to a wide range of audiences through entertaining stories and simple messaging. Whether through visual art, literature, film, or music, this project has made me realize the influence creative work can have on self-reflection, challenging societal or ethical norms, and fostering meaningful dialogue.
+
+                    <h2 id="ref">References</h2>
+                    <h3>Text</h3>
+                    <p>Andrews, M. (Director) & Chapman, B. (Director). (2012, June 19). Brave [Film]. Pixar Animation Studios.</p>
+                    <p>Berman, R., & Katona, Z. (2020). Curation Algorithms and Filter Bubbles in Social Networks. Marketing Science, 39(2), 296–316. https://doi.org/10.1287/mksc.2019.1208</p>
+                    <p>Bird, B. (Director) & Pinkava, J. (Director) (2007, June 27). Ratatouille [Film]. Pixar Animation Studios.</p>
+                    <p>Board, T. E. (2014, January 2). Edward Snowden, whistle-blower. The New York Times. https://www.nytimes.com/2014/01/02/opinion/edward-snowden-whistle-blower.html</p>
+                    <p>Casarosa, E. (Director). (2021, June 18). Luca [Film]. Pixar Animation Studios.</p>
+                    <p>Chmielewski, D. (2021, March 12). Cost of Harry and Meghan’s security revealed. Forbes. https://www.forbes.com/sites/dawnchmielewski/2021/03/12/cost-of-harry-and-meghans-security-revealed/</p>
+                    <p>CMU. (2014, October 29). Carnegie Mellon’s inflatable robotic arm inspires design of Disney’s latest character - news - Carnegie Mellon University. Carnegie Mellon’s Inflatable Robotic Arm Inspires Design of Disney’s Latest Character - News - Carnegie Mellon University. https://www.cmu.edu/news/stories/archives/2014/october/october29_baymax.html</p>
+                    <p>Davies, D. (2019, September 19). Edward Snowden speaks out: “I haven’t and I won’t” cooperate with Russia. NPR. https://www.npr.org/2019/09/19/761918152/exiled-nsa-contractor-edward-snowden-i-haven-t-and-i-won-t-cooperate-with-russia</p>
+                    <p>Disney News. (2018, March 27). The definitive list of brave quotes. https://news.disney.com/brave-quotes</p>
+                    <p>Docter, P. (2015, June 19). Inside Out [Film]. Pixar Animation Studios.</p>
+                    <p>Gleiser, I., & Laurens, F. (2023, August 15). How computer vision is enabling a circular economy. Amazon Web Services. https://aws.amazon.com/blogs/hpc/how-computer-vision-is-enabling-a-circular-economy/</p>
+                    <p>Google. (n.d.). Use the copyright match tool - youtube help. Google. https://support.google.com/youtube/answer/7648743?hl=en#:~:text=Review%20and%20act%20on%20potential%20matches%201%20Sign,video%20you%20want%20to%20take%20action%20on.%20</p>
+                    <p>Hall, D. (Director) & Williams, C. (Director). (2014, November 7). Big Hero 6 [Film].Walt Disney Animation Studios.</p>
+                    <p>Hayward, J. (Director). (2008, March 14) Martino, S. (Director). Horton Hears a Who [Film]. Blue Sky Studios.</p>
+                    <p>MacQuarrie, J. (2012, October 29). Interview with Rich Moore and Clark Spencer, the Director and Producer of Wreck-It Ralph. WIRED. https://www.wired.com/2012/10/interview-with-rich-moore-and-clark-spencer-the-director-and-producer-of-wreck-it-ralph/</p>
+                    <p>Moore, R. (Director). (2012, November 2). Wreck-It Ralph [Film]. Walt Disney Animation Studios.</p>
+                    <p>Mucci, T., & Stryker, C. (2024, August 2). Examples of Artificial General Intellgence (AGI). IBM. https://www.ibm.com/think/topics/artificial-general-intelligence-examples</p>
+                    <p>Osborne, M. (Director). Stevenson J. (Director). (2008, June 6). Kung Fu Panda [Film]. DreamWorks Animation.</p>
+                    <p>Rosenblatt, K., Tolentino, D., Abbruzzese, J., Hamedy, S., Goggin, B., Snow, K., Vanian, J., & Kolodny, L. (2024, January 31). Senate hearing highlights: Lawmakers grill CEOs from TikTok, X and Meta about online child safety. NBC News. https://www.nbcnews.com/tech/live-blog/senate-hearing-online-child-safety-big-tech-live-updates-rcna136235</p>
+                    <p>Scanlon, D. (Director). (2013, June 21). Monsters University [Film]. Pixar Animation Studios.</p>
+                    <p>Seuss, Dr. (Author) (1954). Horton Hears a Who [Book]. New York, NY: Random House.</p>
+                    <p>Sohn, P. (Director) (2023, June 16). Elemental [Film]. Pixar Animation Studios.</p>
+                    <p>Stanton, A. (Director) (2009, June 29). WALL-E [Film]. Pixar Animation Studios.</p>
+                    <p>Unkrich, L. (Director). (2017, November 22). Coco [Film]. Pixar Animation Studios.</p>
+                    <p>Vallor, S. (2018). Technology and the virtues: A philosophical guide to a future worth wanting. Oxford University Press.</p>
+
+                   <h3>Images</h3>
+                    <p>Disney. (n.d.). [“Ralph always makes a grand entrance”]. Disney Movies. https://movies.disney.com/wreck-it-ralph</p>
+                    <p>https://vignette.wikia.nocookie.net/disney/images/c/c1/Microbots_2.jpg/revision/latest?cb=20150216185801</p>
+                    <p>https://www.heinzhistorycenter.org/wp-content/uploads/2018/08/2_atkeson.jpg</p>
+                    <p>https://c4.wallpaperflare.com/wallpaper/69/206/450/brave-pixar-wallpaper-preview.jpg</p>
+                    <p>https://3.bp.blogspot.com/-pECPV9ktFb0/WjQLDdLiXSI/AAAAAAAALIs/sQylW6dHg88IqBWG3AFzUawTszbqIKqDwCLcBGAs/s1600/Coco-Disney-Pixar-LA.jpg</p>
+                    <p>https://www.nerdevil.it/wp-content/uploads/2021/04/luca-disney-pixar-mostri-marini.jpg</p>
+                    
+                
+            </main>
+        </div>
+
+        <div class="spacer"></div>
+        
+
+        <footer class="extend">
+            <div class="left-footer">
+                <p>Content and HTML/CSS code created by ChatGPT and Microsoft Copilot.</p>
+                <p>Modified by template provided by CS 299/PHIL 222</p>
+            </div>
+            <div class="right-footer">
+                <a href="https://hits.sh/cs.wellesley.edu/~eh111/cs299-portfolio/index.html/"></a>
+                    <img style="height:3vh; width:auto" alt="Hits" src="https://hits.sh/cs.wellesley.edu/~eh111/cs299-portfolio/index.html.svg"/>
+                </a>
+                <p>~eh111</p>
+            </div>
+        </footer>
+</body>
 </html>

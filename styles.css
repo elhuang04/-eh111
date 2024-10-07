@@ -3,6 +3,10 @@ html {
     margin-top:5vh;
     margin-right:10vw;
 }
+.main{
+    width:fit-content;
+    overflow-wrap: anywhere;
+}
 
 .extend {
     margin-left:-10vw;
@@ -12,7 +16,7 @@ html {
 body {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: light;
+    
     font-style: normal;
     font-size: 0.75rem;
     font-variation-settings:
@@ -258,6 +262,17 @@ img {
 
     anchor-name: --toc;
 }
+.fixed-button {
+    position: fixed;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transform:translate(17vw,5vh);
+}
+
 
 .hide-toc{
     display:None
