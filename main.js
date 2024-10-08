@@ -14,7 +14,7 @@ links.forEach(link => {
 });
 
 function toggleDarkMode() {
-    const button = document.querySelector('.toggle-button');
+    const button = document.querySelector('.dark-button');
     const currentMode = document.body.classList.contains('dark-mode');
     if (currentMode) {
         document.body.classList.remove('dark-mode');
