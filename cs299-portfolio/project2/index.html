@@ -24,12 +24,12 @@
     <body>
         <div class="navbar extend">
             <div class="menu">
-                <a href="../index.html">🏠</a>
-                <a href="../project1/index.html">Project 1</a>
-                <a href="#project2">Project 2</a>
-                <a href="../project3/index.html">Project 3</a>
-                <a href="../project4/index.html">Project 4</a>
-                <a href="../project/5index.html">Project 5</a>
+                <a href="../../cs299-portfolio/">🏠</a>
+                <a href="../project1/">Project 1</a>
+                <a href="../project2/">Project 2</a>
+                <a href="../project3/">Project 3</a>
+                <a href="../project4/">Project 4</a>
+                <a href="../project5/">Project 5</a>
             </div>
             <div class="name">Elizabeth Huang</div>
             <button class="toggle-button" onclick="toggleDarkMode()"><p class="button-text">Dark Mode</p></button>
@@ -38,12 +38,12 @@
         <div class="spacer"></div>
 
         <div class="content extend">
-            <button type="button" class="collapsible" onclick="toggleSideBar()">
+            <button type="button" class="collapsible" onclick="toggleSideBar()" style="height:6vh">
                 <p class="button-text">Show Table of Contents</p>
             </button>        
             <!-- <button class="toggle-button" onclick="">Show Table of Contents</button> -->
             <div class="table-of-content-container">
-                <button type="button" class="fixed-button collapsible" onclick="toggleSideBar()"><p class="button-text">Close</p></button>
+                <button type="button" class="fixed-button collapsible" onclick="toggleSideBar()" style="height:6vh"><p class="button-text">Close</p></button>
 
                 <aside class="table-of-content">
                     <h2 class="menu-heading scrollingElem">Table of Contents</h2>
@@ -53,12 +53,58 @@
                         <li class="menu-sub-heading">
                             1. Introduction
                         </li>
-
-                        <li class="menu-sub-heading">2. In Progress</li>
-                        <!-- submenu  -->
                         <ul class="sub-menu">
-                            <li><a href="#2.1">2.1 In Progress</a></li>
+                          <li><a href="#1.1">1.1 Inspiration</a></li>
                         </ul>
+                        <ul class="sub-menu">
+                          <li><a href="#1.2">1.2 Hypothesis</a></li>
+                        </ul>
+                        <ul class="sub-menu">
+                          <li><a href="#1.3">1.3 Objective</a></li>
+                        </ul>
+                        <ul class="sub-menu">
+                          <li><a href="#1.4">1.4 Research Design and Methodology</a></li>
+                        </ul>
+
+                        <li class="menu-sub-heading">2. Part 1: Questionnaire Results, Visualizations, and Analysis</li>
+                          <!-- submenu  -->
+                          <ul class="sub-menu">
+                            <li><a href="#2.1">2.1 Results Summary Table</a></li>
+                          </ul>
+                          <ul class="sub-menu">
+                            <li><a href="#2.2">2.2 Analysis</a></li>
+                          </ul>
+                        
+                        <li class="menu-sub-heading">3. Part 2: Journal Entries and Patterns</li>
+                          <ul class="sub-menu">
+                            <li><a href="#3.1">3.1 Summary</a></li>
+                          </ul>
+                          <ul class="sub-menu">
+                            <li><a href="#3.2">3.2 Journal Entries</a></li>
+                          </ul>
+
+                          <li class="menu-sub-heading">4. Part 3: Digital Data Traces</li>
+                            <ul class="sub-menu">
+                              <li><a href="#4.1">4.1 Visualizations</a></li>
+                            </ul>
+                            <ul class="sub-menu">
+                              <li><a href="#4.2">4.2 Analysis</a></li>
+                            </ul>
+                            <ul class="sub-menu">
+                              <li><a href="#4.3">4.3 Music Listening and Productivity</a></li>
+                            </ul>
+
+                          <li class="menu-sub-heading">5. Conclusion</li>
+                            <ul class="sub-menu">
+                              <li><a href="#5.1">5.1 Self-Reflection on Digital Tech Use</a></li>
+                            </ul>
+                            <ul class="sub-menu">
+                              <li><a href="#5.2">5.2 Research Process Evaluation</a></li>
+                            </ul>
+                        <li class="menu-sub-heading">
+                            <a href="#ref">References</a>
+                        </li>
+                            
 
                     </ul>
                 </aside>
@@ -72,8 +118,11 @@
                         <p>
                             About a year ago, I came across a video made by the YouTube channel, Answer in Progress, titled “how i fixed my attention span.” Throughout the video, the creator talks about different ways they tracked their productivity by mapping their brain activity to each of their everyday actions. This way, the creator was able to easily identiy patterns in which tasks in a day made her more productive or less productive. The video concludes with her data visualizations and conclusions about her habits and an impressive finding about how mediation hugely improved her productivity. I wanted to be able to identify whether there might be a similar “productivity trigger” with my daily routines by looking specifically at how specific music choices might influence my productivity. 
                         </p>
-                            <iframe class="thumb" src="https://www.youtube.com/embed/vYaNiC4kchg?si=_uboiV_5ulYIY4GN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <h3 id="1.2">1.2 Hypothesis</h3>
+                            <iframe class="thumb" src="https://www.youtube.com/embed/vYaNiC4kchg?si=_uboiV_5ulYIY4GN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="Thumbnail shows Answer in Progress host surrounded by phone application icons on left and brain activity (EKG) graph visualizations on right. Pictured icons on left include Messages, Likes, Discord, Laughing Emoji, Instagram."></iframe>
+                            <p class="caption">Caption: Thumbnail of "how i fixed my attention span" video created by Answer in Progress.</p>
+                            <p class="caption">Alt Text: Thumbnail shows Answer in Progress host surrounded by phone application icons on left and brain activity (EKG) graph visualizations on right. Pictured icons on left include Messages, Likes, Discord, Laughing Emoji, Instagram.</p>
+
+                            <h3 id="1.2">1.2 Hypothesis</h3>
                         The basis of my data collection hinges on the inference that music may be a potential “productivity trigger.” In other words, listening to music of a particular genre might make me more productive than not listening to music. My reasoning for this assumption is due to my constant reach for music in everyday tasks including homework, chores, walking, and more. Although I listen to music everyday, there are often times where music does not help my focus. Thus, I hypothesize that I might actually be the most productive when I am not listening to music, and secondarily productive when listening to music without words, which limits the distraction factor of music listening. 
                         <h3 id="1.3">1.3 Objective</h3>
                         <p>
@@ -82,7 +131,7 @@
                         <p>
                             This definition leads Vallor to pose the following question of reflective self-examination in a technomoral contex: “Might [reflective self-examination] gradually refine our moral judgment of the best courses of technosocial action, and allow us to experience greater joy in living with the technologies we create?” To best make refinements and improvements on our moral judgement and actions, it becomes necessary to understand our habits more completely through a more thorough observation of our technosocial behaviors/ activities. Tracking digital tech use and self-reflections throughout this project ensures a more critical evaluation of how technology influences our daily beahviors, a habit that might give insight on improving personal technosocial habits. 
                         </p>
-                        <h3 id="1.4">1.4 Research Design & Methodology</h3>
+                        <h3 id="1.4">1.4 Research Design and Methodology</h3>
                         <p>
                             My process methodology for Project 2 comprised of data collection in 3 different methods. One component of my data collection process was labeling with categorization the intent behind web usage for each activity marked in my browser history (collected via a Google Chrome extension rather than a browser). Since this is an aspect of metadata that could not be collected in any other way, but was important for framing/ understanding my productivity on any given day, it was necessary to understand the data more comprehensively. Secondly, I used custom automations and pre-processing to control the songs that could be used throughout the project. Since I typically listen to the same couple of songs on loop, before my data collection began, I curated 3 playlists: each playlist to represent a broad genre of my 20 most listened songs in Pop, Instrumental (Rock, Orchestral, EDM), and R&B. On my phone, I created custom automations to run and track everytime I started and stopped listening to a particular playlist/ genre. While this step may have been similarly accomplished in the post-collection process, collecting them through custom trackers allowed for more control of the data that was relevant for this project’s insights and eliminated a lot of pre-processing steps that could be more difficult to assess post-collection. Lastly, I used a daily survey with both a quantitative and qualitative component to self-assess my productivity for the day on a scale from 1-10 while reflecting on the day in a written entry. Using digital tools to collect data rather than recording both manual and automatic traces by hand ensured my data to be as accurate as possible during my collection period (9/25 - 10/2). 
                         </p>
@@ -93,7 +142,85 @@
                             Additionally, Heather Krause, a data scientist cited in D'Ignazio and Klein’s <em>Data Feminism</em> provides a basic 5 question framework for data context definition: “Where did it come from? Who collected it? When? How was it collected? Why was it collected?” In this case, the data is coming from both automatic collection sources (Google Takeout/ YouTube Music, BroTime/ Browser History), and manual collection sources (Google Form for Productivity Questionnaire, and manual entry into Google Sheets). Some of the data could be cross-referenced by another source, which verified the accuracy of the data collection. Each data record was collected when a specific activity triggered a timestamp, and most typically through already written code made by Google, Microsoft, etc. Even the manual portions of the data collection were recorded through timestamps in digital formats (Google Sheets, Google Forms). Thus, all data collection was relatively consistent in format and process (same tracking/ recording algorithms). Lastly, as provided previously, the purpose of the data collection was for this project and my own personal observation/ reflection.
                         </p>
                             
-                    <h2 id="2.0">2. Part 1</h2>
+                    <h2 id="2.0">2. Part 1: Questionaire Results, Visualizations, and Analysis</h2>
+                    <h3 id="2.1">2.1 Results Summary Table</h3>
+                    <div style="display:flex; justify-content:center;">
+                      <table style="width:75%; ">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Total Distractions</th>
+                                <th><img class="table-icon" src="https://freelogopng.com/images/all_img/1658588965instagram-logo-png-transparent-background.png"></th>
+                                <th><img class="table-icon" src="https://th.bing.com/th/id/OIP.QtxgOAJ05TkBX728q7T0TgHaHa?rs=1&pid=ImgDetMain"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td>9/25/2024</td>
+                              <td>5</td>
+                              <td><a href="#" onclick="showTimestamps('instagram', '9/25/2024', this); return false;">3</a></td>
+                              <td><a href="#" onclick="showTimestamps('hbo', '9/25/2024', this); return false;">2</a></td>
+                            </tr>
+                            <tr>
+                              <td>9/26/2024</td>
+                              <td>1</td>
+                              <td><a href="#" onclick="showTimestamps('instagram', '9/26/2024', this); return false;">1</a></td>
+                              <td><a href="#" onclick="showTimestamps('hbo', '9/26/2024', this); return false;">0</a></td>
+                            </tr>
+                            <tr>
+                              <td>9/27/2024</td>
+                              <td>2</td>
+                              <td><a href="#" onclick="showTimestamps('instagram', '9/27/2024', this); return false;">2</a></td>
+                              <td><a href="#" onclick="showTimestamps('hbo', '9/27/2024', this); return false;">0</a></td>
+                            </tr>
+                            <tr>
+                              <td>9/28/2024</td>
+                              <td>5</td>
+                              <td><a href="#" onclick="showTimestamps('instagram', '9/28/2024', this); return false;">0</a></td>
+                              <td><a href="#" onclick="showTimestamps('hbo', '9/28/2024', this); return false;">5</a></td>
+                            </tr>
+                            <tr>
+                              <td>9/29/2024</td>
+                              <td>7</td>
+                              <td><a href="#" onclick="showTimestamps('instagram', '9/29/2024', this); return false;">6</a></td>
+                              <td><a href="#" onclick="showTimestamps('hbo', '9/29/2024', this); return false;">1</a></td>
+                            </tr>
+                            <tr>
+                              <td>9/30/2024</td>
+                              <td>0</td>
+                              <td><a href="#" onclick="showTimestamps('instagram', '9/30/2024', this); return false;">0</a></td>
+                              <td><a href="#" onclick="showTimestamps('hbo', '9/30/2024', this); return false;">0</a></td>
+                            </tr>
+                            <tr>
+                              <td>10/1/2024</td>
+                              <td>2</td>
+                              <td><a href="#" onclick="showTimestamps('instagram', '10/1/2024', this); return false;">2</a></td>
+                              <td><a href="#" onclick="showTimestamps('hbo', '10/1/2024', this); return false;">0</a></td>
+                            </tr>
+                            <tr>
+                              <td>10/2/2024</td>
+                              <td>2</td>
+                              <td><a href="#" onclick="showTimestamps('instagram', '10/2/2024', this); return false;">2</a></td>
+                              <td><a href="#" onclick="showTimestamps('hbo', '10/2/2024', this); return false;">0</a></td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                  </div>
+                  <p class="caption">Caption: Summary table of manually recorded distractions in each day of the collection period. Hover or click over each number count of HBO Max and Instagram pick-up numbers to reveal timestamps.</p>
+
+                  <div id="timestampCard" class="card-popup-modal"></div>
+                  <!-- analysis section -->
+                  <h3 id="2.2">2.2 Analysis</h3>
+                  <p>
+                    Each of my distraction pick-ups resulted in a 45 minute - 1 hour time block of idle time (no productive tasks ongoing). The most common times these pick-ups would occur were between 11:00am - 12:00pm, and 5:00pm - 6:00pm. In other words, during my lunch and dinner times. Since I intentionally open these apps during my meal times to give myself a small entertainment break, these results make a lot of sense. The other time frames Iopen these apps are seemingly random, but also make sense with my day-to-day schedule. Often times, if I have an hour between my classes (also applies to time in between student org meetings) and my work has already been completed, I’ll open these apps to pass the time before the start of my next class. Although many of these tallied behaviors are known and intentional, knowing the exact frequency makes me realize the amount of time I waste mindlessly using my phone and how I could spend my time more productively with more consistent regulation of these digital habits.
+                  </p>
+
+                  <!-- Part 2 -->
+                  <h2 id="3.0">3. Part 2: Journal Entries and Patterns</h2>
+                  <h3 id="3.1">3.1 Summary and Patterns</h3>
+                  In Day 6, I gave myself the highest score of the week. I hypothesize this might be because I was focused on a singular category of tasks for the entire day. Rather than spreading my focus in several different categories throughout the day, I dedicated the entire day to completing as much classwork as possible. Days 0 and 2 were the days in my collection period with medium-high overall productivity scores (text sentiment analyzed by ChatGPT and self-scored). In my journal entries, a common characteristic shared between these days is the balance of activites across my different areas. When I log my day, they all produced overall “green” (higher productivity scores) because they contained some component of everything: classwork, student organization work, personal project work, work at the helpdesk, etc. Day 5 and Day 8 produced neutral productivity scores. In a similar reasoning as the days analyzed above, these days seem to be concentrated in 2 categories of work compared to Days 0 and 2 which had around 4 categories of work. The remaining days all scored extremely low in productivity. The commonality between them is not completing any tasks in my work categories and additionally spending too much time in entertainment (socializing with family, streaming shows).
+                  <h3 id="3.2">3.2 Journal Entries</h3>
                     <div class="card">
                         <div class="card-header">
                           <span class="date">9/24/2024 22:33:00</span>
@@ -104,7 +231,7 @@
                         </div>
                         <div class="card-body">
                           <h2>Day 0</h2>
-                          <p>Today was decently productive! I started my day with an 8am meeting, then had class until 2pm. After class I went to my work shift at the help desk until 3:40pm then went to the career fair, talked to recruiters, applied to open internships until 5:30pm. I finished dinner at 5:45 pm and started working on some student org deliverables until 6:20 pm. At 6:20 I started preparing for a client call with my co-founder and finished the meeting at 7pm. At 7pm, I took a nap and didn't wake up until 9pm. Then at 9pm I started working on some student org things again and also took a look at planning for some future events. At 10pm I started working on this assignment and planning my work for the rest of the week. Overall, a pretty productive day, although I'm wondering if I'm not doing enough orgs/ spending enough time on extracurriculars that might move me forward since I seem to have a pretty decent amount of free time in the day.</p>
+                          <p>Today was decently productive! I started my day with an 8am meeting, then had class until 2pm. After class I went to my work shift at the help desk until 3:40pm then went to the career fair, talked to recruiters, applied to open internships until 5:30pm. I finished dinner at 5:45 pm and started working on some student org deliverables until 6:20 pm. At 6:20 I started preparing for a client call and finished the meeting at 7pm. At 7pm, I took a nap and didn't wake up until 9pm. Then at 9pm I started working on some student org things again and also took a look at planning for some future events. At 10pm I started working on this assignment and planning my work for the rest of the week. Overall, a pretty productive day, although I'm wondering if I'm not doing enough orgs/ spending enough time on extracurriculars that might move me forward since I seem to have a pretty decent amount of free time in the day.</p>
                         </div>
                     </div>
 
@@ -119,7 +246,7 @@
                         <div class="card-body">
                           <h2>Day 1</h2>
                           <p>
-                            Overall, today was not the most productive. I woke up at 8am for my morning shift at the helpdesk and wrapped up my shift around 10:30am. After my shift, I went to some of the dining halls looking for something to eat, but realized that it was a bit too late. By the time I had gotten around to Lulu, it was already around 11:15am. I went back to my dorm room and tried to boil some water in my new pan, however, realized that I might need a different pan for this stove (incompatible types...). Near 11:45am, I realized I needed to prepare for a meeting. My meeting finished up at around 1pm and then I went on to lunch. At lunch time, I was super unproductive, I basically spent the entire hour just eating and watching the show Friends. When I got back to my dorm, I took a nap and didn't wake up until closer to 3pm in the afternoon. Once I woke up, I started going through some of my student org deliverables, my CS 299 classwork project up until 4:30pm. I then had a meeting with Casey on some student org planning and collaboration ideas and wrapped up the meeting at 5pm. At 5:20pm, I reached my friend Vivien's dorm and we walked together around the lake and ate dinner together. Once we finished, it was around 6:30pm and I got back to my dorm around 6:45. I'm not super clear what I did at that time, but I believe I may have taken another nap and wasted more time on my phone. Since around 10pm, I've been looking through my photos trying to recover an old/ corrupted one I wanted to use and also finishing up a load of laundry. While I wasn't able to get a lot done today, I'm hoping that the energy from the naps will allow me to get more work done in the next few hours before heading off to sleep. 
+                            Overall, today was not the most productive. I woke up at 8am for my morning shift at the helpdesk and wrapped up my shift around 10:30am. After my shift, I went to some of the dining halls looking for something to eat, but realized that it was a bit too late. By the time I had gotten around to Lulu, it was already around 11:15am. I went back to my dorm room and tried to boil some water in my new pan, however, realized that I might need a different pan for this stove (incompatible types...). Near 11:45am, I realized I needed to prepare for a meeting. My meeting finished up at around 1pm and then I went on to lunch. At lunch time, I was super unproductive, I basically spent the entire hour just eating and watching the show Friends. When I got back to my dorm, I took a nap and didn't wake up until closer to 3pm in the afternoon. Once I woke up, I started going through some of my student org deliverables, my CS 299 classwork project up until 4:30pm. I then had a meeting with Casey on some student org planning and collaboration ideas and wrapped up the meeting at 5pm. At 5:20pm, I reached my friend's dorm and we walked together around the lake and ate dinner together. Once we finished, it was around 6:30pm and I got back to my dorm around 6:45. I'm not super clear what I did at that time, but I believe I may have taken another nap and wasted more time on my phone. Since around 10pm, I've been looking through my photos trying to recover an old/ corrupted one I wanted to use and also finishing up a load of laundry. While I wasn't able to get a lot done today, I'm hoping that the energy from the naps will allow me to get more work done in the next few hours before heading off to sleep. 
                           </p>
                         </div>
                       </div>
@@ -135,7 +262,7 @@
                         <div class="card-body">
                           <h2>Day 2</h2>
                           <p>
-                            Overall, not too bad of a day! Started my day around 7:30-8am and worked on tracking student org budgeting/ finances. At 8:30 had a meeting and kept working on my independent study deliverables until 9:50am. Had class from 9:55 to 11:10am. Directly after class I had work at the helpdesk until 2:15pm. After class, I went back to my dorm to pick some org materials and debug some of the instrumentation for this project. At 2:40 I picked up copies of fliers for my org event. Around 3pm, I posted some fliers up around Lulu and Sci. At around 3:30pm, I went to office hours for CS 235 to ask some questions on today’s lecture and the upcoming exam. I left around 4pm and started working on some homework for other classes. At 5pm, I sent a couple of student org emails and met up with Vivien at Sci to go to the emporium to buy snacks for the upcoming org event. At around 5:10, we started setting up A/V for the org event and hosted our org meeting from 5:30-6:15pm. We then lined up with some new members to eat dumplings at Lulu! It was a long line but it moved pretty quickly and I was able finish my meal before 7pm. At 7pm, I had a meeting with a student about GDSC and event networking/ hosting with GDGs and GDEs. We finished our meeting around 7:20pm and I went to my dorm immediately after. I wrapped up some laundry try and cleaned up my room until around 7:40pm and took a nap until around 8:10pm. At 8:10pm, I had a client/ market research call and finished the call at 9pm. Once the meeting had concluded, I doomscrolled on Instagram since I was unable to call my parents (currently in a different time zone!) and was unproductive until around 9:40pm. I then finished my laundry/ folded and fitted sheets until 10pm. From 10-11 I took a shower/ boiled water/ swept floor/ took a quick walk and then settled back into some student org work until 11:30pm. Then at 11:30 the automation I made for my phone (for this project, pulled this form up) - now it is 11:46. Overall, my day was pretty productively spent and there are not too many areas that need me to reduce distractions in.
+                            Overall, not too bad of a day! Started my day around 7:30-8am and worked on tracking student org budgeting/ finances. At 8:30 had a meeting and kept working on my independent study deliverables until 9:50am. Had class from 9:55 to 11:10am. Directly after class I had work at the helpdesk until 2:15pm. After class, I went back to my dorm to pick some org materials and debug some of the instrumentation for this project. At 2:40 I picked up copies of fliers for my org event. Around 3pm, I posted some fliers up around Lulu and Sci. At around 3:30pm, I went to office hours for CS 235 to ask some questions on today’s lecture and the upcoming exam. I left around 4pm and started working on some homework for other classes. At 5pm, I sent a couple of student org emails and met up with a friend at Sci to go to the emporium to buy snacks for the upcoming org event. At around 5:10, we started setting up A/V for the org event and hosted our org meeting from 5:30-6:15pm. We then lined up with some new members to eat dumplings at Lulu! It was a long line but it moved pretty quickly and I was able finish my meal before 7pm. At 7pm, I had a meeting with a student about GDSC and event networking/ hosting with GDGs and GDEs. We finished our meeting around 7:20pm and I went to my dorm immediately after. I wrapped up some laundry try and cleaned up my room until around 7:40pm and took a nap until around 8:10pm. At 8:10pm, I had a client/ market research call and finished the call at 9pm. Once the meeting had concluded, I doomscrolled on Instagram since I was unable to call my parents (currently in a different time zone!) and was unproductive until around 9:40pm. I then finished my laundry/ folded and fitted sheets until 10pm. From 10-11 I took a shower/ boiled water/ swept floor/ took a quick walk and then settled back into some student org work until 11:30pm. Then at 11:30 the automation I made for my phone (for this project, pulled this form up) - now it is 11:46. Overall, my day was pretty productively spent and there are not too many areas that need me to reduce distractions in.
                           </p>
                         </div>
                       </div>
@@ -151,26 +278,11 @@
                         <div class="card-body">
                           <h2>Day 3</h2>
                           <p>
-                            Somewhat of an unproductive day. Relatively, today was more productive than Wednesday, but significantly less productive than yesterday. I didn't get a lot of items off my to-do list today and spent the majority of the day working on some student org deliverables and going to clases. After my classes finished at 5pm, I slept on the bus back and did not do much for the rest of the day. I pretty much spent the rest of the evening talking to my mom and my brother who are currently out of the country and did not make a lot of progress on homework, classwork, org work etc.
+                            Somewhat of an unproductive day. Relatively, today was more productive than Wednesday, but significantly less productive than yesterday. I didn't get a lot of items off my to-do list today and spent the majority of the day working on some student org deliverables and going to classes. After my classes finished at 5pm, I slept on the bus back and did not do much for the rest of the day. I pretty much spent the rest of the evening talking to my mom and my brother who are currently out of the country and did not make a lot of progress on homework, classwork, org work etc.
                           </p>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                          <span class="date">9/27/2024 23:40:32</span>
-                          <div class="tags">
-                            Self-Rating: <span class="tag t4">4</span>
-                            GPT Sentiment Score:<span class="tag t4">4</span>
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <h2>Day 4</h2>
-                          <p>
-                            Somewhat of an unproductive day. Relatively, today was more productive than Wednesday, but significantly less productive than yesterday. I didn't get a lot of items off my to-do list today and spent the majority of the day working on some student org deliverables and going to clases. After my classes finished at 5pm, I slept on the bus back and did not do much for the rest of the day. I pretty much spent the rest of the evening talking to my mom and my brother who are currently out of the country and did not make a lot of progress on homework, classwork, org work etc.
-                          </p>
-                        </div>
-                    </div>
 
                     <div class="card">
                         <div class="card-header">
@@ -181,9 +293,9 @@
                           </div>
                         </div>
                         <div class="card-body">
-                          <h2>Day 5</h2>
+                          <h2>Day 4</h2>
                           <p>
-                            Super unproductive!! I sepnt the entire morning working on my CS 250 project with Vivien and barely wrapped up the minimal personal deliverables. After grabbing lunch, I spent the majority of the afternoon watching Friends on HBO max then taking a nap, then talking a long walk before finally settling back into my emails and work. Because of the unproductivity today, I have a TON of work to catch up on between today and tomorrow to ensure all of my work is completed on time in addition to anything extra I want to accomplish this week. I wish I had been more aware of the time today and ketp to my initial schedule of deliverables to be completed by the end of today.
+                            Super unproductive!! I sepnt the entire morning working on my CS 250 project and barely wrapped up the minimal personal deliverables. After grabbing lunch, I spent the majority of the afternoon watching Friends on HBO max then taking a nap, then talking a long walk before finally settling back into my emails and work. Because of the unproductivity today, I have a TON of work to catch up on between today and tomorrow to ensure all of my work is completed on time in addition to anything extra I want to accomplish this week. I wish I had been more aware of the time today and ketp to my initial schedule of deliverables to be completed by the end of today.
                           </p>
                         </div>
                     </div>
@@ -197,7 +309,7 @@
                           </div>
                         </div>
                         <div class="card-body">
-                          <h2>Day 6</h2>
+                          <h2>Day 5</h2>
                           <p>
                             Completed majority of agenda items for today, overall pretty productive. Even with a lot of distractions, stayed on track to complete high priority homework assignments. Took lots of naps and entertainment breaks throughout the day but also spent many hours on homework and assignments. Completed 3 problem set assignments out of 4, 4th still in progress to be completed by tonight. Could have taken less breaks today to be more efficient, but overall met expectations. 
                           </p>
@@ -213,7 +325,7 @@
                           </div>
                         </div>
                         <div class="card-body">
-                          <h2>Day 7</h2>
+                          <h2>Day 6</h2>
                           <p>
                             Stayed on track to finish all homework for the entire day. Spent the whole day completing Physics P-Set leftover homework from weekend; classes in between all time spent on homework from 9:55am until 10pm (10:40 bus arrival back at Wellesley). Skipped morning shift and class to finish up leftover p-sets and class assignments, went to MIT from 11:30am bus and came back at 10:40pm then slept.
                           </p>
@@ -229,7 +341,7 @@
                           </div>
                         </div>
                         <div class="card-body">
-                          <h2>Day 8</h2>
+                          <h2>Day 7</h2>
                           <p>
                             Not super productive, spent the day on a lot of e-board and recruiting tasks rather than high priority homework and classwork items. Wish I had spent less time on my phone and taken more time to study for upcoming exams. Recorded an SOI for an e-board application for over 2 hours before submitting. Majority of the day spent going to class and completing some small homework assignments during work hours. Went to bed early and finished laundry.
                           </p>
@@ -245,246 +357,61 @@
                           </div>
                         </div>
                         <div class="card-body">
-                          <h2>Day 9</h2>
+                          <h2>Day 8</h2>
                           <p>
-                            Not the best/ most productive day, but not the worst either. After my classes today, I finally had a check-in for my independent study, then spent the 1-2 hours after taking customer/ usability calls. After the 2 hour block of meetings, Vivien and I debriefed and summarized our key takeaways for about another hour. Then, I got dinner and spent a little too long eating it. Howeover, today was overall a good catch-up day for learning progress for all my classes in the semester. After I got back to my dorm, I spent majority of the evening studying for my CS 235 exam. Wish I had been more productive on previous days of this week because it would have given me more time to go over some of the concepts I glossed over/ didn't fully understand in the problem sets more thoroughly. Went to sleep pretty early (riight after this survey) since I already feel tired from studying. Hopefully, I can continue my review in the topics I wasn't able to get to yet tomorrow morning before the exam. 
+                            Not the best/ most productive day, but not the worst either. After my classes today, I finally had a check-in for my independent study, then spent the 1-2 hours after taking customer/ usability calls. After the 2 hour block of meetings, I debriefed and summarized our key takeaways for about another hour. Then, I got dinner and spent a little too long eating it. Howeover, today was overall a good catch-up day for learning progress for all my classes in the semester. After I got back to my dorm, I spent majority of the evening studying for my CS 235 exam. Wish I had been more productive on previous days of this week because it would have given me more time to go over some of the concepts I glossed over/ didn't fully understand in the problem sets more thoroughly. Went to sleep pretty early (riight after this survey) since I already feel tired from studying. Hopefully, I can continue my review in the topics I wasn't able to get to yet tomorrow morning before the exam. 
                           </p>
                         </div>
                     </div>
 
-<h2 id="3.0">3. Digital Traces</h2>
-<h3 id="3.1">3.1 Methodology</h3>
-Underlying Objective and Assumptions:
-	Objective
-Understand and accurately represent relationship between productivity and music. 
 
-Productivity
-Assumption: More focused tab work (Classwork, Student Orgs, Work, Recruiting) are an indication of higher productivity
-Web/ browser activity
-Self-reflection/ scoring
-Music
-App activity (YTM)
-Self-collection form
+<h2 id="4.0">4. Digital Data Traces</h2>
+<h3 id="4.1">4.1 Visualizations</h3>
+<div class="carousel">
+  <div class="carousel-item active">
+    <img src="music-site-activity-graph.png" alt='Combo chart with multi-colored line charts and bar graphs. Bar graph component measures listen count (number of songs listened to within an hour) and line graph component measures site count (number of
+    websites active during the specified hour) in each respective category. 
+    Categories of website activity are represented through their hues. 
+    The blue line chart path models the activity of the "Classwork" category,
+    the green line path models the activity of the "Work" category,
+    and the orange line path models the activity of the "Student Orgs" category.' style="width: max-content; height:50vh">
+    <p class="caption">Caption: Hourly Music Listening and Website Activity. Charts Time of Day (in Hours) on the x-axis and Listen Count as well as Site Count (number of websites active in that hour) on the y-axis.</p>
+    <p class="caption">Alt Text: Combo chart with multi-colored line charts and bar graphs. Bar graph component measures listen count (number of songs listened to within an hour) and line graph component measures site count (number of
+      websites active during the specified hour) in each respective category. 
+      Categories of website activity are represented through their hues. 
+      The blue line chart path models the activity of the "Classwork" category,
+      the green line path models the activity of the "Work" category,
+      and the orange line path models the activity of the "Student Orgs" category.</p>
 
+  </div>
+  <div class="carousel-item">
+    <iframe width="581" height="347" alt="Stacked bar graph using colors to break down categorization of website activity.
+    Orange represents 'Work', green represents 'Recruiting', yellow represents 'Entertainment', red represents 'Student Orgs' and 
+    blue represents 'Classwork'." seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQQD8X52f2Vev0KKUVR9dtKxAwLKKupUZuGBykpZbEedNF7Sq21uPSayhO6JY73bBM-n6suvi4AIF_K/pubchart?oid=1851364539&amp;format=interactive"></iframe>
+    <p class="caption">Caption: Interactive stacked bar chart of website activity breakdown. Each bar of the bar graph is a different date and each color segment of the bar represents a percentage breakdown of the cateogry use in that day.</p>
+    <p class="caption">Alt Text: Stacked bar graph using colors to break down categorization of website activity.
+      Orange represents 'Work', green represents 'Recruiting', yellow represents 'Entertainment', red represents 'Student Orgs' and 
+      blue represents 'Classwork'.
+    </p>
+  </div>
+  <div class="carousel-item">
+    <iframe width="581" height="267" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQQD8X52f2Vev0KKUVR9dtKxAwLKKupUZuGBykpZbEedNF7Sq21uPSayhO6JY73bBM-n6suvi4AIF_K/pubchart?oid=1917347804&amp;format=interactive"></iframe>
+    <p class="caption">Caption: Time spent on web for each day of the data collection period.
+    </p>
+    <p class="caption">Alt Text: Area chart of aggregated data from data collection period (9/25 to 10/2). Primarily visualizes the website activity on each day of the data collection period, with 10/2 having the largest area/ most time spent.
+    </p>
+  </div>
+</div>
+<div class="spacer" style="margin:2vh"></div>
+<div style="display:inline">
+    <button class="toggle-button" onclick="changeSlide(-1)">Prev</button>
+    <button class="toggle-button" onclick="changeSlide(1)">Next</button>
+</div>
 
-Key Metrics and Collection:
-Manual Instrumentation
-Metrics
-Collection
-Number of distractions in the day
-Distractions = times when switching from a productive task to a non-productive task
-Manual log of start times for a distraction and respective mobile applications
-Spreadsheet record
+<h3 id="4.2">4.2 Analysis</h3>
+From my results in Part 2, it is clear that completing or working on lots of tasks in a given day correlates to a higher productivity score. With the same logic, we can observe the correlation of working on tasks to the amount of website activity allocated to various categories of work for any given hour. Then, to understand its this relationship with music, we take our digital traces from music listening and cross-reference the activity in each hour to understand patterns in both working productivity and song listening. From the graph “Hourly Music Listening and Website Activity,” the highest productivity peaks in the Classwork category occur between 22:00 (10:00pm) – 2:00 (2:00am) where music count is relatively low. During this time frame, the ratio of website activity to music listening is roughly 750:41 or about 18 active sites for every song. In comparison, music listening is approximately (linearly) proportional to the amount of website activity. Visually, when there are spikes in music listening, there are spikes in website activity as well. The only exceptions to this general visual observation are during the 10:00pm – 2:00am time frame and at 7am, at my wake-up time, when I usually put on a song to start the day and walk to classes/ work.
 
-
-Web/ browser activity:
-Metrics
-Collection
-Web activity for Time Range 9/25 - 10/1
-Per unit of time:
-Number of sites in each tab group
-Time spent in each tab group
-Browser export + BroTime browser extension
-Process Export with Simple CSV Parsing Script to Identify Tab Groupings: Classwork, Student Orgs, Work, Recruiting, Entertainment
-
-
-Productivity self survey due at 11:59 PM daily:
-Metrics
-Collection
-Productivity score / 10
-Sentiment Analysis Score / GPT for Sheets Extension
-Survey form
-
-
-Music listening:
-Metrics
-Collection
-Tracking spreadsheet: music activity for Time Range 9/25 - 10/1
-Per unit of time:
-Duration of listening period for one genre
-Collection form
-Music listening history: Google Takeout select YouTube Music (personal acc)
-<iframe width="581" height="347" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQQD8X52f2Vev0KKUVR9dtKxAwLKKupUZuGBykpZbEedNF7Sq21uPSayhO6JY73bBM-n6suvi4AIF_K/pubchart?oid=1851364539&amp;format=interactive"></iframe>
-
-<iframe width="581" height="267" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQQD8X52f2Vev0KKUVR9dtKxAwLKKupUZuGBykpZbEedNF7Sq21uPSayhO6JY73bBM-n6suvi4AIF_K/pubchart?oid=1917347804&amp;format=interactive"></iframe>
-Productivity
-Web Activity - Hours for Each Tab Group Category (linked to exported activity)
-Date
-9/25/24
-9/26/24
-9/27/24
-9/28/24
-9/29/24
-9/30/24
-10/1/24
-10/2/24
-Total Hours Online
-5.288
-3.222
-3.067
-5.046
-5.274
-4.023
-4.861
-2.535
-Total Activity Tracked
-2020.000
-929.000
-1063.000
-1322.000
-1436.000
-1184.000
-1119.000
-934.000
-Classwork
-4.235
-2.005
-0.877
-4.019
-4.699
-2.851
-3.561
-3.080
-Student Orgs
-0.929
-1.002
-2.112
-1.027
-0.023
-1.615
-0.000
-0.000
-Entertainment
-0.000
-0.059
-0.078
-0.000
-0.760
-0.000
-0.000
-0.000
-Recruiting
-0.000
-0.000
-0.000
-0.000
-0.000
-0.000
-0.485
-0.389
-Work
-0.120
-0.156
-0.000
-0.000
-0.000
-0.053
-0.225
-0.095
-
-
-Music Listening (linked to collection form) | Truncated; first 10 entries
-Start
-Genre
-End
-Duration (hours)
-9/25/2024 8:12:09
-1
-9/25/2024 8:12:57
-0.01
-9/25/2024 8:13:01
-1
-9/25/2024 8:20:58
-0.13
-9/25/2024 10:26:04
-1
-9/25/2024 10:26:53
-0.01
-9/25/2024 10:26:53
-1
-9/25/2024 10:27:13
-0.01
-9/25/2024 10:27:19
-1
-9/25/2024 10:27:23
-0.00
-9/25/2024 10:27:23
-1
-9/25/2024 10:29:42
-0.04
-9/25/2024 10:29:42
-1
-9/25/2024 10:30:45
-0.02
-9/25/2024 10:30:45
-1
-9/25/2024 10:31:23
-0.01
-9/25/2024 10:32:03
-1
-9/25/2024 10:32:23
-0.01
-
-
-Productivity Scoring (linked to survey form) / Journal entries in spreadsheet
-Timestamp
-On a scale from 1-10 how would you rate today's productivity?
-Sentiment score
-9/24/2024 22:33:00
-6
-7
-9/25/2024 23:17:08
-4
-4
-9/26/2024 23:48:43
-6
-8
-9/27/2024 23:40:32
-4
-4
-9/28/2024 23:53:25
-3
-3
-9/29/2024 23:34:36
-5
-7
-9/30/2024 23:30:40
-8
-6
-10/1/2024 23:40:23
-3
-4
-10/2/2024 23:45:42
-5
-6
-
-
-Manual Instrument (linked to spreadsheet)
-# of Distractions
-Record of Distractions (start/ pick-up times)
-N/A
-N/A
-5
-HBO Max: 10:59am, 11:56am, 12:47pm
-Instagram: 11:07am, 6:54pm
-1
-Instagram: 9:02pm
-2
-Instagram: 5:39pm, 9:20pm
-5
-HBO Max: 2:33pm, 3:11pm, 4:54pm, 5:55pm, 6:32pm
-8
-Instagram 1:38am, 3:16pm, 5:20pm, 7:26pm, 8:00pm, 9:00pm
-Workday/ Sheets: 10:43am
-HBO Max: 11:19am
-0
-N/A
-2
-Instagram: 6:18am, 11:29pm
-2
-Instagram: 1:12pm, 5:42pm
-
-<h3 id="3.2">3.2 Music Listening and Productivity</h3>
+<h3 id="4.3">4.3 Music Listening and Productivity</h3>
                     <div class="chart-section">
                         <h2 class="chart-title" style="justify-content:center;">Number of Listens vs Average Productivity Score</p>
                         <div class="chart" style="width: 50vw; height: 30vh;">
@@ -499,31 +426,75 @@ Instagram: 1:12pm, 5:42pm
                             </div>
                         </div>
                     </div>
-Part 3: Show your digital data traces visualizations (ideally you want to choose platforms for which you have written in Part 1 & Part 2). For example, if you measured how productive you were when listening to music, you can download your Spotify data traces to find out what kind of music you listened to during that session. Explain what you see.
+                    <p class="caption">Caption: Interactive visualization of Music Listening activity and Productivity. The x-axis charts the self-survyed productivity score and the y-axis shows the number of listens for each song. The overall position of a song represents its relative productivity to other songs. Hover over each song cover icon to reveal more information about the song, click an icon to reveal more songs with the same positional score.</p>
+                    <p class="caption">Alt Text: Full song list with image sources linked under Cleaned Music Data Takeout Used for Interactive Visualization. Each circle icon contains a small icon picture of the song's album.</p>
+
+
 <!-- <h3 id="3.3">3.3 Web Browser Activity during Music Listening Sessions</h3>
 Research Design: Do the questions you asked meaningfully capture your relationship with (digital) technology (i.e. focus on important aspects of it that often concern you)? Did you collect data consistently and accurately? Did you provide evidence of your process?
 Data Analysis and Visualization: Did you draw meaningful conclusions from your data? Did you generate insightful visualizations (manual or digital) that indicate your tech use as part of your daily life? 
 Web Page Report: Did you follow the five-part structure for the report; did you write cohesively providing evidence as appropriate, making strong arguments; does your web page look good?
 Above and beyond - Did you take the project to heart and did an impressive job in all the above-listed areas, going beyond what was required in this document with respect to one or more of these areas (e.g. number of questions you asked, amount of data you collected, how you represented your work, visualizations you created, etc. etc.). -->
 
-            <h2 id="4.0">4. Conclusion</h2>
-            My process methodology for Project 2 comprised of data collection in 3 different methods.
+            <h2 id="5.0">5. Conclusion</h2>
+            <h3 id="5.1">5.1 Self-Reflection on Digital Tech Use</h3>
+              <p>
+                As predicted at the beginning of this project, my data collection correctly demonstrated evidence that I am the most productive when I’m not listening to music. However, I was surprised to find that I am secondarily most productive when listening to pop songs. Throughout the entire period of the data collection process the distribution of my song genres can be summarized into the following frequency counts: Pop Songs: 137, Instrumental Songs: 13, R&B Songs: 3. I selected these 3 genres as the curated playlists at the start of the project because I felt that they would demonstrate how melodies vs songs affect my productivity. Since Pop songs are generally upbeat with high BPM (beats per minute, or tempo), they often are packaged with more lyrics than other genres. In comparison, the instrumental songs I chose include only instrumental melodies with no vocal tracks — songs with guitar, piano, and orchestra but no words. The middle ground I selected was R&B since my selection of those songs have a lower BPM, and thus, a lower word count for the same span of time as a pop song. 
+              </p>
+              <p>
+                My only intentional self-surveillance throughout my data collection period were my journal entries, which meant that most of my behavior was unchanged throughout the week. On one hand, analyzing my data observations after the project’s completion meant that patterns were easy to identify, which made it easy to connect intention to action. However, it also meant that I couldn’t observe how my own self-awareness might have affected my data collection compared to my understanding of my current digital habits. I was definitely surprised to see that music had such a positive and proportional relationship with my productivity in digital traces during the day time and I wonder if I had another week of data collection if I might observe new patterns with more music listening during the day (8am – 10pm).
+              </p>
+            <h3 id="5.2">5.2 Research Process Evaluation</h3>
+            <p>
+              One thing that worked really well was annotating and categorizing my browser activity manually on a daily basis during the collection period. While some sites can be vaguely put into any category, for example, Gmail, or Calendar, manually adding notes of the intention of these actions and being able to group them by timestamps, helped with categorizing my digital activity as accurately as possible (most closely recording my actual behavior). When it came to the data visualization, analysis, and reflection portions of this project, having that data already cleaned and labeled made it incredibly easy to identify patterns in the data both visually and numerically. I even referenced at this data record for my daily journal reflections when I needed to recall some of things I did in the day that made it feel more productive. 
+            </p>
+            <p>
+              One thing that I thought would be helpful was using a custom automation to track the song genres I was listening to — I curated playlists in 3 different genres with the intention of tracking differences in productivity patterns when listening to different types of songs. However, when I tried to create subsets of data in these specific criteria, the heavy skew towards Pop music (137 listens) made the results for R&B music (3 listens) extremely difficult to make comparisons with. The data in this week alone was too sparse and incomplete to observe any patterns of activity relating to both genre and website activity category. Thus, although this was one portion of the project that took a long time to set up and record data for, the end result did not provide any use towards making any final conclusions.
+            </p>
+            <p>
+              A practice I’d like to preserve after this project is the continuation of journal entries. I liked that I spent a couple minutes each day to write and reflect about some of the aspects that made the day productive and recognize habits that might hinder my productivity as well. Even without the data insights behind my digital habits, having the journal helps me keep a manual log of the intentions behind the actions I made. Having a reference to my ratings and actions on previous days allos me to more comprehensively understand my everyday actions and simple actions I can take to improve them. Another aspect I liked about how I set up mu journal entries was both the self-scored productivity rating (out of 10) for the day relative to a GPT scored sentiment analysis score (also out of 10) to compare how I perceived my productivity to an acting third person perspective. Many days where I scored myself as only averagely productive, it was great to see a more positive GPT score, which signaled to me there were parts of the day that may have been more productive than I initially thought. Thus, having the second layer of scoring provided an opportunity to have a second reflection on any parts of the day I may have missed when evaluating my first score. Hopefully, with the continuation of this practice, I can heighten my awareness in my everyday interactions with technology and reduce time spent on digitally unproductive habits.
+            </p>
 
-            One component of my data collection process was labeling with categorization the intent behind web usage for each activity marked in my browser history (collected via a Google Chrome extension rather than a browser). Since this is an aspect of metadata that could not be collected in any other way, but was important for framing/ understanding my productivity on any given day, it was necessary to understand the data more comprehensively. 
-            
-            Secondly, I used custom automations and pre-processing to control the songs that could be used throughout the project. Since I typically listen to the same couple of songs on loop, before my data collection began, I curated 3 playlists: each playlist to represent a broad genre of my 20 most listened songs in Pop, Instrumental (Rock, Orchestral, EDM), and R&B. On my phone, I created custom automations to run and track everytime I started and stopped listening to a particular playlist/ genre. While this step may have been similarly accomplished in the post-collection process, collecting them through custom trackers allowed for more control of the data that was relevant for this project’s insights and eliminated a lot of pre-processing steps that could be more difficult to assess post-collection. 
-            
-            Lastly, I used a daily survey with both a quantitative and qualitative component to self-assess my productivity for the day on a scale from 1-10 while reflecting on the day in a written entry. By collecting data through these various methods and sources, the context for each piece of data can be better understood both qualitatively and quantitatively. 
-            
-            Overall, to most accurately represent behaviors in the status quo, I used as many automated trackers as possible to reduce outside influence of surveillance on behavior to observe my relationship with music and productivity as accurately as possible (insights that would reflect my everyday behavior/ lifestyle). Besides the project’s objective to collect and represent data in a meaningful way, my personal motivation for the project was wanting to know/ observe any links between music listening choices/ when I was listening to music and when I was the most productive. Parallel to the idea of considering context in Data Feminism, collecting these data points also serves a purpose to provide more context and understanding to behavioral trends in my everyday life that might otherwise have been difficult to observe without synthesizing my personal data into meaningful, clear representations of data communication.
-                 
                 <h2 id="ref">References</h2>
                     <h3>Text</h3>
+                    <p>
+                      Bennett, J. (2023, September 20). Being 13. The New York Times. 
+                      <a href="https://www.nytimes.com/interactive/2023/09/20/well/family/13-year-old-girls-social-media-self-esteem.html">
+                        https://www.nytimes.com/interactive/2023/09/20/well/family/13-year-old-girls-social-media-self-esteem.html
+                      </a>
+                    </p>
+                    <p>
+                      Daniels, M. (2019). Rappers, sorted by the size of their vocabulary. The Pudding.
+                      <a href="https://pudding.cool/projects/vocabulary/index.html">
+                        https://pudding.cool/projects/vocabulary/index.html
+                      </a>
+                    </p>
+                    <p>
+                      D’Ignazio, C., & Klein, L. (2020). 6. The Numbers Don’t Speak for Themselves. In Data Feminism. 
+                      <a href="https://data-feminism.mitpress.mit.edu/pub/czq9dfs5">
+                        https://data-feminism.mitpress.mit.edu/pub/czq9dfs5
+                      </a>
+                    </p>
+                    <p>
+                      Koeze, E. (2021, February 11). Unemployed on Reddit. The New York Times. 
+                      <a href="https://www.nytimes.com/interactive/2021/02/10/business/economy/reddit-unemployed.html">
+                        https://www.nytimes.com/interactive/2021/02/10/business/economy/reddit-unemployed.html
+                      </a>
+                    </p>
                     <p>Vallor, S. (2018). Technology and the virtues: A philosophical guide to a future worth wanting. Oxford University Press.</p>
+                    
+                    <h3>Local Appendix</h3>
+                    <p>
+                      Click to Download: <a href="MUSIC_TRACKER.csv">Cleaned Music Data Takeout Used for Interactive Visualization (.csv)</a>
+                    </p>
+                    <p>
+                      <a href="music-chart-viz-analysis.py">Music Chart Visualization Pre-Processing (Python Script)</a>
+                    </p>
+                    <p>
+                      <a href="cs299_project_2_exploratory_data_analysis.py">Listening and Site Activity Chart Visualization (Python Script)</a>
+                    </p>
 
-                   <h3>Images</h3>
-                    <p>Disney. (n.d.). [“Ralph always makes a grand entrance”]. Disney Movies. https://movies.disney.com/wreck-it-ralph</p>
-                
+
             </main>
         </div>
 

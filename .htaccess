@@ -1,0 +1,21 @@
+RewriteEngine On
+
+# Redirect for project1
+RewriteCond %{THE_REQUEST} /project1/index\.html [NC]
+RewriteRule ^(.*)project1/index\.html$ https://cs.wellesley.edu/~eh111/cs299-portfolio/project1/ [L,R=301]
+
+# Redirect for project2
+RewriteCond %{THE_REQUEST} /project2/index\.html [NC]
+RewriteRule ^(.*)project2/index\.html$ https://cs.wellesley.edu/~eh111/cs299-portfolio/project2/ [L,R=301]
+
+# Redirect for project3
+RewriteCond %{THE_REQUEST} /project3/index\.html [NC]
+RewriteRule ^(.*)project3/index\.html$ https://cs.wellesley.edu/~eh111/cs299-portfolio/project3/ [L,R=301]
+
+# Redirect for project4
+RewriteCond %{THE_REQUEST} /project4/index\.html [NC]
+RewriteRule ^(.*)project4/index\.html$ https://cs.wellesley.edu/~eh111/cs299-portfolio/project4/ [L,R=301]
+
+# Redirect for project5
+RewriteCond %{THE_REQUEST} /project5/index\.html [NC]
+RewriteRule ^(.*)project5/index\.html$ https://cs.wellesley.edu/~eh111/cs299-portfolio/project5/ [L,R=301]

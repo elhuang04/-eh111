@@ -1,12 +1,135 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <title>
-        Project 3
-    </title>
-    <head>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3</title>
+    <meta name="gc:theme" content="medium">
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="../../main.js"></script>
+    
+    <!-- google fonts used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- bootstrap libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
     <body>
-        This project doesn't exist yet...
-        Reuturn to home page <a href="../index.html">here</a>
-    </body>
+        <div class="navbar extend">
+          <div class="menu">
+            <a href="../../cs299-portfolio/">🏠</a>
+            <a href="../project1/">Project 1</a>
+            <a href="../project2/">Project 2</a>
+            <a href="../project3/">Project 3</a>
+            <a href="../project4/">Project 4</a>
+            <a href="../project5/">Project 5</a>
+        </div>
+            <div class="name">Elizabeth Huang</div>
+            <button class="toggle-button" onclick="toggleDarkMode()"><p class="button-text">Dark Mode</p></button>
+        </div>
+        
+        <div class="spacer"></div>
+
+        <div class="content extend">
+            <button type="button" class="collapsible" onclick="toggleSideBar()" style="height:6vh">
+                <p class="button-text">Show Table of Contents</p>
+            </button>        
+            <!-- <button class="toggle-button" onclick="">Show Table of Contents</button> -->
+            <div class="table-of-content-container">
+                <button type="button" class="fixed-button collapsible" onclick="toggleSideBar()" style="height:6vh"><p class="button-text">Close</p></button>
+
+                <aside class="table-of-content">
+                    <h2 class="menu-heading scrollingElem">Table of Contents</h2>
+
+                    <!-- main menu of table of content -->
+                    <ul class="main-menu">
+                        <li class="menu-sub-heading">
+                            1. Introduction
+                        </li>
+                        <ul class="sub-menu">
+                          <li><a href="#1.1">1.1 Inspiration</a></li>
+                        </ul>
+                        <ul class="sub-menu">
+                          <li><a href="#1.2">1.2 Hypothesis</a></li>
+                        </ul>
+                        <li class="menu-sub-heading">
+                            <a href="#ref">References</a>
+                        </li>
+                            
+
+                    </ul>
+                </aside>
+            </div>
+            <main class="main" style="margin-left:5vw; margin-right:5vw">
+    
+                <!-- section -->
+                <h2 id="1.0">1. Introduction</h2>
+                
+
+                <h2 id="ref">References</h2>
+                    <h3>Text</h3>
+                    <p>
+                      Bennett, J. (2023, September 20). Being 13. The New York Times. 
+                      <a href="https://www.nytimes.com/interactive/2023/09/20/well/family/13-year-old-girls-social-media-self-esteem.html">
+                        https://www.nytimes.com/interactive/2023/09/20/well/family/13-year-old-girls-social-media-self-esteem.html
+                      </a>
+                    </p>
+                    <p>
+                      Daniels, M. (2019). Rappers, sorted by the size of their vocabulary. The Pudding.
+                      <a href="https://pudding.cool/projects/vocabulary/index.html">
+                        https://pudding.cool/projects/vocabulary/index.html
+                      </a>
+                    </p>
+                    <p>
+                      D’Ignazio, C., & Klein, L. (2020). 6. The Numbers Don’t Speak for Themselves. In Data Feminism. 
+                      <a href="https://data-feminism.mitpress.mit.edu/pub/czq9dfs5">
+                        https://data-feminism.mitpress.mit.edu/pub/czq9dfs5
+                      </a>
+                    </p>
+                    <p>
+                      Koeze, E. (2021, February 11). Unemployed on Reddit. The New York Times. 
+                      <a href="https://www.nytimes.com/interactive/2021/02/10/business/economy/reddit-unemployed.html">
+                        https://www.nytimes.com/interactive/2021/02/10/business/economy/reddit-unemployed.html
+                      </a>
+                    </p>
+                    <p>Vallor, S. (2018). Technology and the virtues: A philosophical guide to a future worth wanting. Oxford University Press.</p>
+                    
+                    <h3>Local Appendix</h3>
+                    <p>
+                      Click to Download: <a href="MUSIC_TRACKER.csv">Cleaned Music Data Takeout Used for Interactive Visualization (.csv)</a>
+                    </p>
+                    <p>
+                      <a href="music-chart-viz-analysis.py">Music Chart Visualization Pre-Processing (Python Script)</a>
+                    </p>
+                    <p>
+                      <a href="cs299_project_2_exploratory_data_analysis.py">Listening and Site Activity Chart Visualization (Python Script)</a>
+                    </p>
+
+
+            </main>
+        </div>
+
+        <div class="spacer"></div>
+        
+
+        <footer class="extend">
+            <div class="left-footer">
+                <p>Content and HTML/CSS code created by ChatGPT and Microsoft Copilot.</p>
+                <p>Modified by template provided by CS 299/PHIL 222</p>
+            </div>
+            <div class="right-footer">
+                <a href="https://hits.sh/cs.wellesley.edu/~eh111/cs299-portfolio/index.html/"></a>
+                    <img style="height:3vh; width:auto" alt="Hits" src="https://hits.sh/cs.wellesley.edu/~eh111/cs299-portfolio/index.html.svg"/>
+                </a>
+                <p>~eh111</p>
+            </div>
+        </footer>
+</body>
 </html>
