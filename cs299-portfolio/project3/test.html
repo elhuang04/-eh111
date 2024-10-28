@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tabs</title>
+    <style>
+      
+      .tab {
+          display: flex;
+          justify-content: center;
+          margin: 20px 0;
+      }
+
+      .tab button {
+          cursor: pointer;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          margin: 0 5px;
+          transition: 0.3s;
+      }
+
+      .tab button:hover {
+          background-color: #bbb;
+      }
+
+      .tab button.active {
+          background-color: #007BFF;
+          color: #fff;
+      }
+
+      .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          max-width: 50%;
+          margin: 0 auto;
+          border: 1px solid #ccc;
+          border-top: none;
+      }
+
+      /* Responsive styling */
+      @media screen and (max-width: 768px) {
+          .tabcontent {
+              max-width: 75%;
+          }
+      }
+
+      .content-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+      }
+
+      .content-container .item {
+          flex: 1 1 calc(50% - 20px);
+          max-width: calc(50% - 20px);
+          margin: 10px;
+          box-sizing: border-box;
+      }
+
+      @media screen and (max-width: 768px) {
+          .content-container .item {
+              flex: 1 1 100%;
+              max-width: 100%;
+              margin: 10px 0;
+          }
+      }
+
+      /* Styling for images to be responsive */
+      .content-container img, .content-container iframe {
+          width: 100%;
+          height: auto;
+      }
+  </style>
+</head>
+<body>
+
+<h3>Interactive and Responsive Tabs</h3>
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'WebAds')">Web Ads</button>
+  <button class="tablinks" onclick="openTab(event, 'Screenshots')">Screenshots</button>
+</div>
+
+<div id="WebAds" class="tabcontent">
+  <div class="content-container">
+    <div class="item">
+      <iframe src="https://www.youtube.com/embed/z1zHZvBPmG4?si=74z5a5ya8rP6MCjD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p>Equivocation: The phrase "capitalizing" is used in two different senses. First, it implies benefiting from ads, and second, it references how ads are leveraging or exploiting the user. By using the same term with different meanings, it creates an ambiguous and catchy statement that grabs attention.</p>
+    </div>
+    <div class="item">
+      <iframe src="https://www.youtube.com/embed/FKMK0CT57LI?si=w1dUJj7eWrSagdvA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p>Ad Baculum: The statement "Donald Trump and his allies are outspending us by tens of millions of dollars" can be seen as an appeal to fear. It suggests that without your contribution, the opposing side's financial advantage could lead to a loss, creating a sense of urgency and fear of the consequences.</p>
+    </div>
+    <!-- Add more iframe items as needed -->
+  </div>
+</div>
+
+<div id="Screenshots" class="tabcontent">
+  <div class="content-container">
+    <div class="item">
+      <img src="project-media/Image_20241022105700 - Instagram.jpg">
+      <p>Complex Question: The sentence structure and phrasing subtly implies that if you don't swipe, you aren't ready to think big. The structure of the sentence presupposes an answer, making you feel compelled to act to affirm your ambition.</p>
+    </div>
+    <div class="item">
+      <img src="project-media/Image_20241022105533 - Yahoo.jpg">
+      <p>Post Hoc Ergo Procter Hoc: By investing with Fisher Investments, the ad implies you will utilize "7 Ways to Retire Comfortably With $1 Million."</p>
+    </div>
+    <!-- Add more image items as needed -->
+  </div>
+</div>
+
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Open the default tab
+document.querySelector('.tab button').click();
+</script>
+
+</body>
+</html>

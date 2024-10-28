@@ -169,6 +169,15 @@ footer {
     background-color: #333;
     color: #f5f5f5;
 }
+
+.dark-mode .caption {
+    color:white;
+}
+
+.dark-mode .tag {
+    color: #333;
+}
+
 .dark-mode .navbar {
     background-color: #444;
 }
@@ -230,7 +239,7 @@ footer {
     background-color: #666;
     transform: scale(1.1);
 }
-img, .thumb {
+img, .thumb, video{
     object-fit: cover;
     width: 30vw;
     height: 30vh;
@@ -293,6 +302,8 @@ img, .thumb {
     overflow-y:auto;
     z-index:1000;
 }
+
+
 
 .scrollingElem {
     margin-top:12vh
@@ -563,4 +574,120 @@ th, td {
 .carousel > div.active {
     display: block;
     height:fit-content
+}
+
+.gallery {
+    max-width: 1200px;
+    margin: auto;
+    padding:10px;
+}
+
+.media-container img, video {
+    flex: auto;
+    height:15vh;
+    max-width:15vw;
+}
+
+.media-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+
+
+/* SMALLER SCREENS */
+/* Hide TOC and toggle buttons on smaller screens */
+@media (max-width: 1000px) { /* Adjust the max-width as needed */
+    .table-of-content {
+        display: none; /* Hides the TOC */
+    }
+
+    .media-container img, video {
+        display:inline-block;
+        height:30vh;
+        max-width:50vw;
+    }
+    
+    button { /* Adjust this selector to match your toggle buttons */
+        display: none; /* Hides all toggle buttons */
+    }
+}
+
+/* Show TOC and toggle buttons on larger screens */
+@media (min-width: 1000px) {
+    .table-of-content {
+        display: block; /* Shows the TOC */
+    }
+    
+    button { /* Adjust this selector to match your toggle buttons */
+        display: block; /* Shows all toggle buttons */
+    }
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.tab button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #bbb;
+}
+
+.tab button.active {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    max-width: 80%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+    .tabcontent {
+        max-width: 75%;
+    }
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content-container .item {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .content-container .item {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Styling for images to be responsive */
+.content-container img, .content-container iframe {
+    width: 100%;
+    height: auto;
 }

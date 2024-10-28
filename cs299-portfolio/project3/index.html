@@ -71,47 +71,257 @@
     
                 <!-- section -->
                 <h2 id="1.0">1. Introduction</h2>
+                  Two of the sources provided for this project, Facebook Home’s 2013 “Dinner” ad and Cory Doctorow’s book <em>How to Destroy Surveillance Capitalism</em>, present two sides of the ad landscape. In the Facebook Home ad, we see each family member in the video have a personalized stream of content so that each of them can enjoy content that’s user-specific to take away from boring conversation or events. In contrast, Doctorow’s piece explicates the exploitative nature of these platforms; how the design of these platforms are made to condition users towards making interaction with ads. More specifically, Doctorow explains the intent of digital platforms to capitalize heavily on user data to create demographic-specific, addictive engagement loops that manipulate user behavior. Thus, to observe both aspects of digital ads, my primary objective throughout this project is to capture as many ads (across various platforms) as possible and identify areas of “manipulation” or persuasive techniques being used.
                 
+                <h2 id="2.0">2. Part 1: Data Collection</h2>
+                <img src="project-media/Figure_1.png">
+                <p class="caption">Caption: Figure showinng number of ads collected from various sources.</p>
+                <button class="toggle-button" id="collapse-gallery" onclick="collapseGallery()">Show All Data Collected</button>
+                <div class="gallery" id="media-container" style="display:none">
+                    <div class="media-container">
+                        <!-- Your images and videos go here -->
+                    </div>
+                </div>
+
+                <h2 id="3.0">3. Part 2: Present Your Findings</h2>
+                  <h3 id="3.1">3.1 Methodology and Challenges</h3>
+                  To try to find as many different fallacies represented in ads as possible, my data collection looked for each fallacy type first before considering the source. Capturing ads from a diverse range of mediums was difficult, as I typically only consume content from 2 platforms: Instagram and YouTube. While both of these platforms are known for their ad personalization and monetization structure, I had almost forgotten to look for ads on YouTube because I’ve had the Premium version of their service for quite some time. Sourcing from Instagram was surprisingly easy in numbers, as an ad (sponsored content) was displayed every 3–4 posts or so. Finding ads from outside of these platforms was more challenging as my primary method was to think about platforms that need needs and which sites I’ve remembered seeing ads from. By the end of the project, I collected 93 ads from the following 10 sources: Instagram, YouTube, Yahoo, Offline Music Player (Mobile App), NYTimes, X, Pinterest, WhatsApp, Reddit, and Apple News. Since my method of data collection was based on a convenience sample of data sources and observational only (I did not interact with the ads to see if it influenced recommendations), it was not only inefficient but also tricky to know if the ads I collected are enough to probe algorithms and diverse categories of ads.
+                  <h3 id="3.2">3.1 Examples</h3>
+                  <div class="tab">
+                    <button class="tablinks" onclick="openTab(event, 'WebAds')">Web Ads</button>
+                    <button class="tablinks" onclick="openTab(event, 'Screenshots')">Screenshots</button>
+                  </div>
+                  <div id="WebAds" class="tabcontent">
+                    <div class="content-container">
+                      <div class="item">
+                        <iframe src="https://www.youtube.com/embed/z1zHZvBPmG4?si=74z5a5ya8rP6MCjD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p>Equivocation: The phrase "capitalizing" is used in two different senses. First, it implies benefiting from ads, and second, it references how ads are leveraging or exploiting the user. By using the same term with different meanings, it creates an ambiguous and catchy statement that grabs attention.</p>
+                      </div>
+                      <div class="item">
+                        <iframe src="https://www.youtube.com/embed/FKMK0CT57LI?si=w1dUJj7eWrSagdvA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p>Ad Baculum: The statement "Donald Trump and his allies are outspending us by tens of millions of dollars" can be seen as an appeal to fear. It suggests that without your contribution, the opposing side's financial advantage could lead to a loss, creating a sense of urgency and fear of the consequences.</p>
+                      </div>
+                      <div class="item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/GotXLO3OBXw?si=b4ZiFWLT9U8SM0RV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p>
+                          Post Hoc Ergo Procter Hoc: Using Grammarly, the ad promises benefits with improved communication skills and focus on everyday tasks.
+                        </p>
+                      </div>
+                      <div class="item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/F0oXTHKoPz8?si=KdN3zAAyjch4TMjF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p>
+                          Equivocation: Throughout the ad, the speaker talks about the different kinds of homes/ settings their product is entering into using physical doors, while at the end of the ad, the phrase "we're at your door" is used to mean shipping direct to your home address and be present on demand.
+                        </p>
+                      </div>
+                      <div class="item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/bferHozUx7Q?si=yg8iGRiBYicmdG_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p>
+                          Equivocation: The phrase "sick-of-this" is used repeatedly throughout the ad, with first mention of being sick meaning bedridden and having a physical cold or illness. The second meaning an annoyance and frustration with tedius, complex cooking steps, which the product can provide a solution for (instant ramen).
+                        </p>
+                      </div>
+                      <div class="item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/S43Vb30aM10?si=9hXZCxTUUwCWGYO4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p>
+                          Slippery Slope: While this ad is not the most extreme example of this fallacy, it uses the set-up to escalate an initially fun/ relaxing situation into an increasingly stressful and problematic scenario. The ad begins with the idea of sharing a room with your friends, but increasingly adds problems with sharing the shower, bathroom, hair dryer causing you and your friends to run out of personal space.
+                        </p>
+                      </div>
+                      <div class="item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/iiNudlyXT18?si=pGsWSNPV-BmZBibG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p>
+                          Post Hoc Ergo Procter Hoc: The main message of the ad is that because Mint Mobile is using a cheaper camera to shoot the ad, the savings from this are being passed on to the consumer in the form of lower prices for mobile service. In other words, by shooting the ad with a lower quality camera, users have more benefits from their service.
+                        </p>
+                      </div>
+                      <div class="item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/jVGMuSN6rAk?si=WwoEncHOEZvpuGnw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p>
+                          Irrelevant Conclusion: The ad concludes that because you were listening to Audible while in the bath, you were able to make impressive connections and solve problems. However, the true value of Audible is that it offers a wealth of audiobooks and content, not that it necessarily enhances your cognitive abilities in those specific ways.
+                        </p>
+                      </div>
+                      <div class="item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/zOuhAPypcSg?si=1jVW4ykS6aO5wCVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p>
+                          Composition: The ad implies that TD Bank's various strengths (financial strength, industry expertise, supporting businesses) mean the entire bank is customer-centric. This might be seen as Composition, suggesting the whole bank is equally people-first because some parts of it are.
+                        </p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                  <div id="Screenshots" class="tabcontent">
+                    <div class="content-container">
+                      <div class="item">
+                        <img src="project-media/Image_20241022105700 - Instagram.jpg">
+                        <p>Complex Question: The sentence structure and phrasing subtly implies that if you don't swipe, you aren't ready to think big. The structure of the sentence presupposes an answer, making you feel compelled to act to affirm your ambition.</p>
+                      </div>
+                      <div class="item">
+                        <img src="project-media/Image_20241022105533 - Yahoo.jpg">
+                        <p>Post Hoc Ergo Procter Hoc: By investing with Fisher Investments, the ad implies you will utilize "7 Ways to Retire Comfortably With $1 Million."</p>
+                      </div>
+                      <div class="item">
+                        <img src="project-media/Image_20241022105734 - Reddit.jpg">
+                        <p>
+                          Post Hoc Ergo Procter Hoc: The implication of this ad is that their personalized kits will accomplish your weight loss objectives. In reality, the actual site and product does not directly correlate to weight loss, it's a personalized supplement you can take while on your weight loss journey.
+                        </p>
+                      </div>
+                      <div class="item">
+                        <img src="project-media/Image_20241022105531 - Yahoo.jpg">
+                        <p>
+                          Ad Populum: The ad provides the statistic of fighting nearly all common stains and uses the word "Dependable" to emphasize the popularity and universal application of their product.
+                        </p>
+                      </div>
+                      <div class="item">
+                        <img src="project-media/Image_20241022105743 - Apple News.jpg">
+                        <p>
+                          Ad Populum: A key phrase in this ad is "Trusted by 100+ million users globally," which demonstrates the use of popular opinion to persuade new potential customers.
+                        </p>
+                      </div>
+                      <div class="item">
+                        <img src="project-media/Image_20241022105548 - Instagram.jpg">
+                        <p>
+                          Irrelevant conclusion: The ad makes the conclusion that because it is capable of catching even paranomoral activity and ghosts on camera, that it is the best camera to use for home security.
+                        </p>
+                      </div>
+                      <div class="item">
+                        <img src="project-media/Image_20241022105636 - WhatsApp.jpg">
+                        <p>
+                          Ad Baculum: The ad has the premise that if you don't use WhatsApp, your personal conversations might be intercepted or leaked to external users. By using WhatsApp, the product promises privacy in your conversations.
+                        </p>
+                      </div>
+                      <div class="item">
+                        <img src="project-media/Image_20241022105719 - Reddit.jpg">
+                        <p>
+                          Faulty Analogy: The analogy is with chivalry and battery life; the idea is that while chivalry can survive, your old phone’s battery won't, nudging you to get the new iPhone, an unapplicable analogy.
+                        </p>
+                      </div>
+                      <div class="item">
+                        <img src="project-media/Screenshot 2024-10-16 142857 - Instagram.png">
+                        <p>
+                          Faulty Analogy: The ad uses a word play in its caption "Raise your lantern to bring light to the darkness of cancer." The analogy between physical light/ lanterns and combatting the difficult journey of cancer is an abstractly stretched analogy.
+                        </p>
+                      </div>
+
+
+                    </div>
+                  </div>
+                
+                <h2 id="4.0">4. Part 3: Deeper Analysis</h2>
+                  <h3 id="4.1">4.1 Written Essay</h3>
+                  I came across this ad a couple of months ago and was able to find the ad again when looking for ads relating to this project. It’s possible that the ad is personalized to me because a lot of the content I consume on YouTube are political skits on SNL.
+
+                  The persuasion tactic of the video is simple: use my opponent’s words against themselves. The ad is comprised of a singular clip of presidential candidate Kamala Harris speaking about the rise of prices on common goods.
+
+                  From a persuasive standpoint, this ad is incredibly effective as it uses unedited clips of the opponent (minimal changes if any) with direct quotes, which would signal to an audience member that the ad isn’t altering the argument of the other candidate/ twisting their words in any way.
+
+                  However, this ad is a clear example of the Post Hoc Ergo Propter Hoc fallacy. To quote the ad directly, "A loaf of bread costs 50% more today than it did before the pandemic. Ground beef is up almost 50%." The video then cuts away to "I'm Donald Trump and I approve this message."
+
+                  Clearly, this video is drawing a conclusion that due to President Biden's lead on economic policies, prices have gone up. Since Biden's presidency was during the pandemic, the framing of Candidate Harris' in context of time, implies that prices increased because of the actions taken from the pandemic and onwards. This messaging works in Candidate Trump's favor as he uses this quote to make the argument that Biden's presidency caused us to see an increase in prices for our everyday goods. 
+
+                  This is, however, misleading as it assumes that there are no any external factors that have affected the increase of price. While Candidate Harris may continue to provide context that the national economy for all businesses suffered during the pandemic, the video is cut off immediately, to use Candidate Harris' words in a context that best fits Candidate Trump's campaign.
+
+                  I found this ad to be pretty persuasive despite having an opposing political stance. The most persuasive technique used in the ad is the seemingly raw clip of Candidate Harris in her speech. Using the clip without editing and no additional messaging from Candidate Trump made the ad feel authentic and easier to trust. 
+
+                  <h3 id="4.2">4.2 Video Essay</h3>
+                  <video controls style="width:50vw; height:50vh">
+                    <source src="project-media/WeChat_20241025122149.mp4" type="video/mp4">
+                    This browser does not display the video tag.
+                  </video>
+                  
 
                 <h2 id="ref">References</h2>
-                    <h3>Text</h3>
-                    <p>
-                      Bennett, J. (2023, September 20). Being 13. The New York Times. 
-                      <a href="https://www.nytimes.com/interactive/2023/09/20/well/family/13-year-old-girls-social-media-self-esteem.html">
-                        https://www.nytimes.com/interactive/2023/09/20/well/family/13-year-old-girls-social-media-self-esteem.html
-                      </a>
-                    </p>
-                    <p>
-                      Daniels, M. (2019). Rappers, sorted by the size of their vocabulary. The Pudding.
-                      <a href="https://pudding.cool/projects/vocabulary/index.html">
-                        https://pudding.cool/projects/vocabulary/index.html
-                      </a>
-                    </p>
-                    <p>
-                      D’Ignazio, C., & Klein, L. (2020). 6. The Numbers Don’t Speak for Themselves. In Data Feminism. 
-                      <a href="https://data-feminism.mitpress.mit.edu/pub/czq9dfs5">
-                        https://data-feminism.mitpress.mit.edu/pub/czq9dfs5
-                      </a>
-                    </p>
-                    <p>
-                      Koeze, E. (2021, February 11). Unemployed on Reddit. The New York Times. 
-                      <a href="https://www.nytimes.com/interactive/2021/02/10/business/economy/reddit-unemployed.html">
-                        https://www.nytimes.com/interactive/2021/02/10/business/economy/reddit-unemployed.html
-                      </a>
-                    </p>
-                    <p>Vallor, S. (2018). Technology and the virtues: A philosophical guide to a future worth wanting. Oxford University Press.</p>
-                    
-                    <h3>Local Appendix</h3>
-                    <p>
-                      Click to Download: <a href="MUSIC_TRACKER.csv">Cleaned Music Data Takeout Used for Interactive Visualization (.csv)</a>
-                    </p>
-                    <p>
-                      <a href="music-chart-viz-analysis.py">Music Chart Visualization Pre-Processing (Python Script)</a>
-                    </p>
-                    <p>
-                      <a href="cs299_project_2_exploratory_data_analysis.py">Listening and Site Activity Chart Visualization (Python Script)</a>
-                    </p>
-
+                <h3>YouTube Video Citations</h3>
+                <p id="ref-1">
+                    YouTube. (2024). Screenshot 2024-10-16 151742 [Video]. YouTube.
+                    <a href="https://www.youtube.com/watch?v=FKMK0CT57LI">https://www.youtube.com/watch?v=FKMK0CT57LI</a>
+                </p>
+                <p id="ref-2">
+                    YouTube. (2024). Image_20241022105700 [Video]. YouTube.
+                    <a href="https://www.youtube.com/watch?v=8EXZYr3kiCc">https://www.youtube.com/watch?v=8EXZYr3kiCc</a>
+                </p>
+                <p id="ref-3">
+                    YouTube. (2024). Image_20241022105533 [Video]. YouTube.
+                    <a href="https://www.youtube.com/watch?v=wOOX15I0xHg">https://www.youtube.com/watch?v=wOOX15I0xHg</a>
+                </p>
+                <p id="ref-4">
+                    YouTube. (2024). Image_20241022105636 [Video]. YouTube.
+                    <a href="https://www.youtube.com/watch?v=uG9Pwe6_XfU">https://www.youtube.com/watch?v=uG9Pwe6_XfU</a>
+                </p>
+                <p id="ref-5">
+                    YouTube. (2024). Image_20241022105719 [Video]. YouTube.
+                    <a href="https://www.youtube.com/watch?v=fzcHPall9pU">https://www.youtube.com/watch?v=fzcHPall9pU</a>
+                </p>
+                <p id="ref-6">
+                    YouTube. (2024). If we allow students to start using calculators in math exams, it will eventually lead to robots taking over the world [Video]. YouTube.
+                    <a href="https://www.youtube.com/watch?v=CAHaREunMuk">https://www.youtube.com/watch?v=CAHaREunMuk</a>
+                </p>
+                <p id="ref-7">
+                    YouTube. (2024). [Video]. 
+                    <a href="https://www.youtube.com/watch?v=bferHozUx7Q">https://www.youtube.com/watch?v=bferHozUx7Q</a>
+                </p>
+                <p id="ref-8">
+                    YouTube. (2024). [Video]. 
+                    <a href="https://www.youtube.com/watch?v=S43Vb30aM10">https://www.youtube.com/watch?v=S43Vb30aM10</a>
+                </p>
+                <p id="ref-9">
+                    YouTube. (2024). [Video]. 
+                    <a href="https://www.youtube.com/watch?v=13X1UZ8w2PM">https://www.youtube.com/watch?v=13X1UZ8w2PM</a>
+                </p>
+                <p id="ref-10">
+                    YouTube. (2024). [Video]. 
+                    <a href="https://www.youtube.com/watch?v=rQ5G8teSXHA">https://www.youtube.com/watch?v=rQ5G8teSXHA</a>
+                </p>
+                <p id="ref-11">
+                    YouTube. (2024). [Video]. 
+                    <a href="https://www.youtube.com/watch?v=iiNudlyXT18">https://www.youtube.com/watch?v=iiNudlyXT18</a>
+                </p>
+                <p id="ref-12">
+                    YouTube. (2024). [Video]. 
+                    <a href="https://youtu.be/ZJhkvPmy1Is">https://youtu.be/ZJhkvPmy1Is</a>
+                </p>
+                <p id="ref-13">
+                    YouTube. (2024). [Video]. 
+                    <a href="https://www.youtube.com/watch?v=EOoZte1q6JQ">https://www.youtube.com/watch?v=EOoZte1q6JQ</a>
+                </p>
+                <p id="ref-14">
+                    YouTube. (2024). [Video]. 
+                    <a href="https://www.youtube.com/watch?v=jVGMuSN6rAk">https://www.youtube.com/watch?v=jVGMuSN6rAk</a>
+                </p>
+                <p id="ref-15">
+                    YouTube. (2024). [Video]. 
+                    <a href="https://www.youtube.com/watch?v=zOuhAPypcSg">https://www.youtube.com/watch?v=zOuhAPypcSg</a>
+                </p>
+                <p id="ref-16">
+                    YouTube. (2024). [Video]. 
+                    <a href="https://www.youtube.com/watch?v=yF3Nk4YlU_Y">https://www.youtube.com/watch?v=yF3Nk4YlU_Y</a>
+                </p>
+                
+                <h3>Images</h3>
+                <p id="ref-17">
+                    Instagram. (2024). Image_20241022105700 [Image]. Instagram.
+                </p>
+                <p id="ref-18">
+                    Yahoo. (2024). Image_20241022105533 [Image]. Yahoo.
+                </p>
+                <p id="ref-19">
+                    Yahoo. (2024). Image_20241022105531 [Image]. Yahoo.
+                </p>
+                <p id="ref-20">
+                    WhatsApp. (2024). Image_20241022105636 [Message]. WhatsApp.
+                </p>
+                <p id="ref-21">
+                    Reddit. (2024). Image_20241022105719 [Post]. Reddit.
+                </p>
+                
+                <h3>Book Citation</h3>
+                <p id="ref-22">
+                    Doctorow, C. (2020). How to destroy surveillance capitalism. Tor Books.
+                </p>
+                
+                <h3>Stanford Encyclopedia of Philosophy Citation</h3>
+                <p id="ref-23">
+                    Stanford Encyclopedia of Philosophy. (n.d.). Fallacies. Retrieved from 
+                    <a href="https://plato.stanford.edu/entries/fallacies/">https://plato.stanford.edu/entries/fallacies/</a>
+                </p>
+                
 
             </main>
         </div>

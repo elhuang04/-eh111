@@ -200,8 +200,79 @@ function hideCard() {
     document.getElementById("timestampCard").style.display = "none";
 }
 
-// ON CONTENT LOAD
+// carousel next prev
+let currentIndex = 0;
+function changeSlide(direction) {
+    
+    const items = document.querySelectorAll('.carousel-item');
+    console.log("something should be clicked....")
+    console.log(items[currentIndex])
+    items[currentIndex].classList.remove('active');
+    
+    currentIndex = (currentIndex + direction + items.length) % items.length;
+    items[currentIndex].classList.add('active');
+}
+
+
+const mediaFiles = ['project-media/Image_20241016135019 - Instagram.jpg', 'project-media/Image_20241016135029 - Instagram.jpg', 'project-media/Image_20241016135034 - Instagram.jpg', 'project-media/Image_20241016135038 - Instagram.jpg', 'project-media/Image_20241016135042 - Instagram.jpg', 'project-media/Image_20241016135045 - Instagram.jpg', 'project-media/Image_20241016135053 - Instagram.jpg', 'project-media/Image_20241022105514 - Offline Music Player.jpg', 'project-media/Image_20241022105518 - Yahoo.jpg', 'project-media/Image_20241022105521 - Yahoo.jpg', 'project-media/Image_20241022105523 - Yahoo.jpg', 'project-media/Image_20241022105528 - Yahoo.png', 'project-media/Image_20241022105531 - Yahoo.jpg', 'project-media/Image_20241022105533 - Yahoo.jpg', 'project-media/Image_20241022105536 - NYTimes.jpg', 'project-media/Image_20241022105539 - NYTimes.jpg', 'project-media/Image_20241022105542 - NYTimes.jpg', 'project-media/Image_20241022105548 - Instagram.jpg', 'project-media/Image_20241022105551 - Instagram.jpg', 'project-media/Image_20241022105554 - Instagram.jpg', 'project-media/Image_20241022105557 - Instagram.jpg', 'project-media/Image_20241022105600 - Instagram.jpg', 'project-media/Image_20241022105604 - Instagram.jpg', 'project-media/Image_20241022105607 - Instagram.jpg', 'project-media/Image_20241022105610 - Instagram.jpg', 'project-media/Image_20241022105613 - Instagram.jpg', 'project-media/Image_20241022105616 - X.jpg', 'project-media/Image_20241022105619 - Pinterest.jpg', 'project-media/Image_20241022105636 - WhatsApp.jpg', 'project-media/Image_20241022105647 - Instagram.jpg', 'project-media/Image_20241022105650 - Instagram.jpg', 'project-media/Image_20241022105653 - Instagram.jpg', 'project-media/Image_20241022105657 - Instagram.jpg', 'project-media/Image_20241022105700 - Instagram.jpg', 'project-media/Image_20241022105719 - Reddit.jpg', 'project-media/Image_20241022105724 - Reddit.jpg', 'project-media/Image_20241022105727 - Reddit.png', 'project-media/Image_20241022105731 - Reddit.jpg', 'project-media/Image_20241022105734 - Reddit.jpg', 'project-media/Image_20241022105737 - Reddit.jpg', 'project-media/Image_20241022105740 - Reddit.jpg', 'project-media/Image_20241022105743 - Apple News.jpg', 'project-media/Image_20241022105747 - Apple News.png', 'project-media/Image_20241022105750 - Apple News.png', 'project-media/Image_20241022105757 - Apple News.jpg', 'project-media/Screen Recording 2024-10-16 150317 - YouTube.mp4', 'project-media/Screen Recording 2024-10-16 150537 - YouTube.mp4', 'project-media/Screen Recording 2024-10-16 151208 - YouTube.mp4', 'project-media/Screen Recording 2024-10-16 151421 - YouTube.mp4', 'project-media/Screen Recording 2024-10-16 151845 - YouTube.mp4', 'project-media/Screen Recording 2024-10-22 094906 - YouTube.mp4', 'project-media/Screenshot 2024-10-16 142531 - YouTube.png', 'project-media/Screenshot 2024-10-16 142712 - Instagram.png', 'project-media/Screenshot 2024-10-16 142728 - Instagram.png', 'project-media/Screenshot 2024-10-16 142749 - Instagram.png', 'project-media/Screenshot 2024-10-16 142803 - Instagram.png', 'project-media/Screenshot 2024-10-16 142825 - Instagram.png', 'project-media/Screenshot 2024-10-16 142857 - Instagram.png', 'project-media/Screenshot 2024-10-16 142914 - Instagram.png', 'project-media/Screenshot 2024-10-16 142929 - Instagram.png', 'project-media/Screenshot 2024-10-16 142949 - Instagram.png', 'project-media/Screenshot 2024-10-16 143012 - Instagram.png', 'project-media/Screenshot 2024-10-16 143032 - Instagram.png', 'project-media/Screenshot 2024-10-16 143051 - Instagram.png', 'project-media/Screenshot 2024-10-16 143118 - Instagram.png', 'project-media/Screenshot 2024-10-16 143215 - Instagram.png', 'project-media/Screenshot 2024-10-16 143357 - Instagram.png', 'project-media/Screenshot 2024-10-16 143433 - Instagram.png', 'project-media/Screenshot 2024-10-16 143455 - Instagram.png', 'project-media/Screenshot 2024-10-16 143554 - Instagram.png', 'project-media/Screenshot 2024-10-16 143614 - Instagram.png', 'project-media/Screenshot 2024-10-16 145039 - YouTube.png', 'project-media/Screenshot 2024-10-16 145318 - YouTube.png', 'project-media/Screenshot 2024-10-16 145436 - YouTube.png', 'project-media/Screenshot 2024-10-16 150150 - YouTube.png', 'project-media/Screenshot 2024-10-16 151742 - YouTube.png', 'project-media/Screenshot 2024-10-16 151904 - YouTube.png', 'project-media/Screenshot 2024-10-22 094744 - YouTube.png']  
+
+function createMediaElements() {
+    const container = document.getElementById('media-container');
+
+    mediaFiles.forEach(file => {
+        const ext = file.split('.').pop().toLowerCase();
+        let mediaElement;
+
+        if (['jpg', 'png', 'gif'].includes(ext)) {
+            mediaElement = document.createElement('img');
+            mediaElement.src = file;
+            mediaElement.alt = "Image";
+        } else if (['mp4', 'webm', 'ogg'].includes(ext)) {
+            mediaElement = document.createElement('video');
+            mediaElement.controls = true;
+            const source = document.createElement('source');
+            source.src = file;
+            source.type = `video/${ext}`;
+            mediaElement.appendChild(source);
+        }
+
+        container.appendChild(mediaElement);
+    });
+}
+
+function collapseGallery() {
+    var media = document.getElementById("media-container");
+    if (media.style.display === "none") {
+        media.style.display = "contents";
+    } else {
+        media.style.display = "none";
+    }
+}
+
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  
+
+// ON CONTENT LOAD-------------------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
+    
+    createMediaElements();
+    console.log("created!!!");
+    
+     // Open the default tab
+    document.querySelector('.tab button').click();
+
     var links = document.querySelectorAll("td a");
             links.forEach(function(link) {
                 link.addEventListener("click", function(event) {
@@ -214,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     // Call your addRapperCircle function with desired parameters
     addVerticalLines(10);
-
+    
     // static data (pre-processed)
     // TITLES START HERE
     const title = ['Euphoria', '40oz', 'Strawberry', 'Good as Hell', 'About Damn Time', 'Truth Hurts', "Don't Lose Sight", 'Birthday', '22', 'Roar', 'Shut Up and Dance', 'Your Love Is My Drug', 'Party In The U.S.A.', 'Shape of You', 'NO', 'Dynamite', 'Lucky Strike', 'Unwritten', 'All About That Bass', 'New Rules', 'Problem', 'This Is What You Came For', 'Me Too', 'Beautiful Mistakes', 'Strip That Down', 'Just the Way You Are', 'Single Ladies (Put a Ring on It)', 'Levitating', 'Lips Are Movin', 'One More Night', 'Whatcha Say', 'Rockstar', 'Bang Bang', 'Promiscuous', "That's What I Like", "Can't Sleep Love", 'Beauty And A Beat', 'Last Friday Night (T.G.I.F.)', 'Price Tag', '24K Magic', 'Uptown Funk', 'Love On Top', 'Thrift Shop (feat. Wanz)', 'When you wish upon a star', "Boo's Going Home", 'The Scare Games (From "Monsters University"/Score)', 'Monsters, Inc.', 'Alaska', 'Cake By The Ocean', 'Lean On', 'Sugar', 'Only Human', '23', 'Dear Future Husband', 'Please Me', 'Happy (From "Despicable Me 2")', 'Casualty (acoustic-ish)', "Don't Start Now", 'Cold Water', 'More', 'Moves Like Jagger (Studio Recording From "The Voice" Performance)', 'The Lazy Song', 'Señorita', 'Feather', 'High Hopes', 'Jealous', 'Forget You', 'Freckles (acoustic-ish)', "It's a Beautiful Day", "I'm Yours", "Livin' On A Prayer", 'In The Stars', 'Sunset (feat. Cory Wong & Plini)', 'Dancing With Your Ghost', 'Glitter', 'Ophelia', 'Sing', 'Take You Dancing', "Misbehavin'", 'Na Na Na', "Don't You Worry 'Bout A Thing", 'Classic', 'Death of a Bachelor', 'Please Please Please', 'Numb Little Bug', 'La Da Dee', 'Checklist (feat. Chromeo)', 'Anti-Hero', 'Nobody Knows', 'Sweater Weather', 'Riptide', 'Walking On A Dream', 'Put Your Records On', 'Dog Days Are Over', 'Family Business', 'Human', 'Budapest', 'Too Sweet', 'Good Luck, Babe!', 'BIRDS OF A FEATHER', 'Man! I Feel Like A Woman!', 'Good Morning', 'What Makes You Beautiful', 'The Lighthouse', 'Ego', 'Maria Maria', 'Pretty Lies', 'Intentions', 'Pair Of Boots', 'The Weather (Acoustic & Gospel Reprise)', 'Blow for Blow', 'Cheerleader', 'Playing God', 'Blue Sky & The Painter', 'Lioness', 'Genie In A Bottle', 'Sucker', 'Nosey', 'Want To Want Me', 'Levels', 'Gooey', 'Afters', 'Everybody', 'Beautiful', 'Lights Camera Action', 'Smokin Out The Window', 'deadrose', 'Forever', '1, 2 Step', 'Marry You', "C'Mon", 'One Time', 'Time of Our Lives', "You're Hired (feat. Ayra Starr)", 'Girls Like You', 'Magic (feat. Rivers Cuomo)', 'As Long As You Love Me', 'Money Make Her Smile', 'Replay', 'You Da One', "Don't Wanna Know", 'The Other Side', 'One Last Time', 'Troublemaker', 'Casualty', 'Grenade', 'Payphone', "i'm confident that i'm insecure", 'Good Girls Go Bad', 'Locked out of Heaven', "Say You're Just a Friend", 'Whatcha Want', 'What Lovers Do', '23 (acoustic-ish)', 'Finesse', 'Pocketful of Sunshine', 'Freckles', 'Trumpets', "It's Not All About You", 'Bright Lights Bigger City', 'September', 'Maps', 'Down', 'Make A Move', 'Glamorous', 'SUPERBLOOM', 'No Lie', "Nothin' on You (feat. Bruno Mars)", 'Misery', 'Rocketeer', 'decide to be happy', 'We R Who We R', 'MONEY', 'Guy I Used To Be', 'Treasure', 'Goose', 'Ego Death', 'Tummy Hurts', 'Take A Bow', 'Rude', 'Happy Now', 'The Worst', 'Saucy', 'Loud', 'Nightmare', 'Racing into the Night', 'Club Nebula', 'G.O.A.T.', 'Neurotica', 'Reverie', 'Tango', 'Feels', 'Makes Me Wonder', 'Love Never Felt So Good', 'Work', 'Hurricane', 'No Diggity']
@@ -240,17 +311,3 @@ document.addEventListener('DOMContentLoaded', function() {
         addRapperCircle('chart-axis-ticks', imageValue, xvalValue, yvalValue, titleValue, descValue);
 }
 });
-
-
-// carousel next prev
-let currentIndex = 0;
-function changeSlide(direction) {
-    
-    const items = document.querySelectorAll('.carousel-item');
-    console.log("something should be clicked....")
-    console.log(items[currentIndex])
-    items[currentIndex].classList.remove('active');
-    
-    currentIndex = (currentIndex + direction + items.length) % items.length;
-    items[currentIndex].classList.add('active');
-}
