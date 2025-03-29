@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #dfdace;
+    }
+    .quiz-container {
+      max-width: 400px;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .question {
+      margin-bottom: 10px;
+    }
+    .answers button {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .answers button:hover {
+      background-color: #e0e0e0;
+    }
+    .hidden {
+      display: none;
+    }
+    .result-emoji {
+      font-size: 5rem;
+      text-align: center;
+    }
+    .retry-share-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .retry-share-buttons button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .retry-share-buttons button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+    <style>
+    .bingo-board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .bingo-cell {
+      background-color: #fff;
+      border: 2px solid #ccc;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .bingo-cell.checked {
+      background-color: #d3d3d3;
+    }
+    .bingo-cell.checked::after {
+      content: '✔️';
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 20px;
+    }
+    .button-container {
+      margin-top: 20px;
+    }
+    .button-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+  </head>
+<body>
+  <div class="bingo-board">
+    <div class="bingo-cell"><p>You went to an event <i>just</i> for the free food</p></div>
+    <div class="bingo-cell"><p>Your friend dragged you to their club's event</p></div>
+    <div class="bingo-cell"><p>Discovered an event <i>only</i> because a friend told you</p></div>
+    <div class="bingo-cell"><p>You found out about an event too late</p></div>
+    <div class="bingo-cell"><p>✨</p></div>
+    <div class="bingo-cell"><p>You checked the spam board this week</p></div>
+    <div class="bingo-cell"><p>Saw a poster for an event you didn't know existed</p></div>
+    <div class="bingo-cell"><p>Went to two events back-to-back in one day</p></div>
+    <div class="bingo-cell"><p>Missed an event b/c you forgot to put it in your GCal</p></div>
+  </div>
+  <div class="button-container">
+    <button onclick="resetBoard()" class="hidden">Replay</button>
+    <button onclick="shareResults()" class="hidden">Share Results</button>
+  </div>
+
+  <div class="quiz-container">
+    <div id="question-container" class="question">
+      <p id="question-text">Which of the following best describes how you find out about campus events?</p>
+    </div>
+    <div class="answers">
+      <button onclick="goToQuestion('A', 2)">A. I check my email constantly.</button>
+      <button onclick="goToQuestion('B', 3)">B. Posters and flyers catch my eye.</button>
+      <button onclick="goToQuestion('C', 4)">C. My friends keep me in the loop.</button>
+    </div>
+    <div id="result-container" class="hidden">
+      <div id="result-emoji" class="result-emoji"></div>
+      <p id="result-description"></p>
+      <div class="retry-share-buttons">
+        <button onclick="retryQuiz()">Retry</button>
+        <button onclick="shareResults()">Share Results</button>
+      </div>
+    </div>
+  </div>
+<div class="navigation-button">
+      <a href="portfolio-item-b.html"><p>Back</p></a>
+    </div>
+
+  <script>
+    const questions = {
+      1: {
+        text: "Which of the following best describes how you find out about campus events?",
+        answers: {
+          A: { text: "I check my email constantly.", next: 2 },
+          B: { text: "Posters and flyers catch my eye.", next: 3 },
+          C: { text: "My friends keep me in the loop.", next: 4 }
+        }
+      },
+      2: {
+        text: "Which of the following best describes your motivation to go to an event?",
+        answers: {
+          A: { text: "I love them! They're the easiest way to keep track.", next: 6 },
+          B: { text: "There are too many, and I forget to read them.", next: 4 }
+        }
+      },
+      3: {
+        text: "How often do you look at spam boards or flyers?",
+        answers: {
+          A: { text: "Every once in a while.", next: 6 },
+          B: { text: "Rarely or never.", next: 5 }
+        }
+      },
+      4: {
+        text: "What would you do if you heard about a 9 PM cookie-decorating event?",
+        answers: {
+          A: { text: "I'd show up; cookies are worth it!", next: 6 },
+          B: { text: "Nope, too late for me.", next: 5 }
+        }
+      },
+      5: {
+        text: "How do you feel about weekend events?",
+        answers: {
+          A: { text: "Perfect - weekends are free time!", next: "🍪" },
+          B: { text: "No thanks, I'd rather rest.", next: "👻" }
+        }
+      },
+      6: {
+        text: "How many email bumps for the same event is too many?",
+        answers: {
+          A: { text: "One or two is enough.", next: "🧠" },
+          B: { text: "Three or more - I’ll forget otherwise.", next: "🍪" }
+        }
+      },
+      "🧠": {
+        emoji: "🧠",
+        description: "You're a brainiac! You prefer thoughtful decision-making and rely on careful planning to stay informed."
+      },
+      "🍪": {
+        emoji: "🍪",
+        description: "You're a foodie! Free food and fun gatherings are your top motivators for attending events."
+      },
+      "👻": {
+        emoji: "👻",
+        description: "You're a ghost! You tend to stay out of the loop, but that's okay—you value your personal space."
+      }
+    };
+
+
+    function goToQuestion(answer, nextQuestionNumber) {
+      if (typeof nextQuestionNumber === 'string') {
+        showResult(nextQuestionNumber);
+        return;
+      }
+
+
+      const questionText = document.getElementById('question-text');
+      const answersContainer = document.querySelector('.answers');
+
+
+      questionText.innerHTML = questions[nextQuestionNumber].text;
+      answersContainer.innerHTML = '';
+
+
+      const answers = questions[nextQuestionNumber].answers;
+      for (const key in answers) {
+        const answerButton = document.createElement('button');
+        answerButton.textContent = `${key}. ${answers[key].text}`;
+        answerButton.onclick = () => goToQuestion(key, answers[key].next);
+        answersContainer.appendChild(answerButton);
+      }
+    }
+
+
+    function showResult(resultKey) {
+      const questionContainer = document.getElementById('question-container');
+      const answersContainer = document.querySelector('.answers');
+      const resultContainer = document.getElementById('result-container');
+      const resultEmoji = document.getElementById('result-emoji');
+      const resultDescription = document.getElementById('result-description');
+
+
+      questionContainer.classList.add('hidden');
+      answersContainer.classList.add('hidden');
+      resultContainer.classList.remove('hidden');
+
+
+      resultEmoji.textContent = questions[resultKey].emoji;
+      resultDescription.textContent = questions[resultKey].description;
+    }
+
+
+    function retryQuiz() {
+      const questionContainer = document.getElementById('question-container');
+      const answersContainer = document.querySelector('.answers');
+      const resultContainer = document.getElementById('result-container');
+
+
+      questionContainer.classList.remove('hidden');
+      answersContainer.classList.remove('hidden');
+      resultContainer.classList.add('hidden');
+
+
+      goToQuestion(null, 1);
+    }
+
+
+    function shareResults() {
+      const resultContainer = document.getElementById('result-container');
+      html2canvas(resultContainer).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'quiz-results.png';
+        link.href = canvas.toDataURL();
+        link.click();
+      });
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    const cells = document.querySelectorAll('.bingo-cell');
+    const jsConfetti = new JSConfetti();
+    const replayButton = document.querySelector('.button-container button:nth-child(1)');
+    const shareButton = document.querySelector('.button-container button:nth-child(2)');
+    let checkedCells = [];
+    let gameFrozen = false;
+
+
+    cells.forEach(cell => {
+      cell.addEventListener('click', () => {
+        if (!cell.classList.contains('checked') && !gameFrozen) {
+          cell.classList.add('checked');
+          checkedCells.push(cell);
+          checkBingo();
+        }
+      });
+    });
+
+
+    function checkBingo() {
+      const winningCombinations = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+      ];
+      for (const combination of winningCombinations) {
+        if (combination.every(index => cells[index].classList.contains('checked'))) {
+          gameFrozen = true;
+          jsConfetti.addConfetti({
+            emojis: ['🎉'],
+            confettiNumber: 1000  // Tons of confetti
+          }).then(() => {
+            replayButton.classList.remove('hidden');
+            shareButton.classList.remove('hidden');
+          });
+          break;
+        }
+      }
+    }
+
+
+    function resetBoard() {
+      cells.forEach(cell => {
+        cell.classList.remove('checked');
+      });
+      checkedCells = [];
+      replayButton.classList.add('hidden');
+      shareButton.classList.add('hidden');
+      gameFrozen = false;
+    }
+
+
+    function shareResults() {
+      html2canvas(document.querySelector('.bingo-board')).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'bingo-results.png';
+        link.href = canvas.toDataURL();
+        link.click();
+      });
+    }
+  </script>
+</body>
+</html>
+

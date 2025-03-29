@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="robots" content="noodp">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Gallery</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<body class="sub-page" style="background-color:rgb(46, 46, 46)">
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="bounce-1"></div>
+            <div class="bounce-2"></div>
+            <div class="bounce-3"></div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION BUTTON -->
+    <div class="navigation-button">
+        <a href="index.html"><p>Back</p></a>
+    </div>
+
+    <!-- PORTFOLIO ITEM TYPE B -->
+    <div class="portfolio-item-b">
+        <div class="container-fluid">
+            <h1 style="margin-top:-10vh" class="scroll-animated-from-bottom">Archives Gallery</h1>
+            <div id="image-gallery"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-inner scroll-animated-from-bottom">
+            <p>© Design by <a href="https://templatefoundation.com">Template Foundation</a></p>
+            <i class="fa fa-angle-double-up scroll-top" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPTS -->
+    <script type="text/javascript" src="assets/js/plugins.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var imageGallery = document.getElementById('image-gallery');
+            if (!imageGallery) {
+                console.error('Element with id "image-gallery" not found!');
+                return;
+            }
+
+            var imageDirectory = "assets/img/Archives_Gallery_Website/";
+            var imageNames = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg', 'img6.jpg', 'img7.jpg', 'img8.jpg', 'img9.jpg', 'img10.jpg', 'img11.jpg', 'img12.jpg', 'img13.jpg', 'img14.jpg', 'img15.jpg', 'img16.jpg', 'img17.jpg', 'img18.JPG', 'img19.JPG', 'img20.JPG', 'img21.JPG', 'img22.JPG', 'img23.JPG', 'img24.JPG', 'img25.JPG', 'img26.JPG', 'img27.JPG', 'img28.JPG', 'img29.JPG', 'img30.JPG', 'img31.JPG', 'img32.JPG', 'img33.jpg', 'img34.jpg']
+
+            imageNames.forEach(function (imageName) {
+                var imgElement = document.createElement('img');
+                imgElement.className = "img-responsive scroll-animated-from-bottom";
+                imgElement.src = imageDirectory + imageName;
+                imgElement.alt = "image";
+                imageGallery.appendChild(imgElement);
+            });
+
+            function handleScroll() {
+                var images = document.querySelectorAll('.scroll-animated-from-bottom');
+                images.forEach(function (image) {
+                    var rect = image.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        image.classList.add('visible');
+                    } else {
+                        image.classList.remove('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+        });
+    </script>
+</body>
+</html>
