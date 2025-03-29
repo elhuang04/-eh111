@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project X</title>
+    <meta name="gc:theme" content="medium">
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="../../main.js"></script>
+    
+    <!-- google fonts used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- bootstrap libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <body>
+        <div class="navbar extend">
+          <div class="menu">
+            <a href="../../cs299-portfolio/">🏠</a>
+            <a href="../project1/">Project 1</a>
+            <a href="../project2/">Project 2</a>
+            <a href="../project3/">Project 3</a>
+            <a href="../project4/">Project 4</a>
+            <a href="../project5/">Project 5</a>
+        </div>
+            <div class="name">Elizabeth Huang</div>
+            <button class="toggle-button" onclick="toggleDarkMode()"><p class="button-text">Dark Mode</p></button>
+        </div>
+        
+        <div class="spacer"></div>
+
+        <div class="content extend">
+            <button type="button" class="collapsible" onclick="toggleSideBar()" style="height:6vh">
+                <p class="button-text">Show Table of Contents</p>
+            </button>        
+            <!-- <button class="toggle-button" onclick="">Show Table of Contents</button> -->
+            <div class="table-of-content-container">
+                <button type="button" class="fixed-button collapsible" onclick="toggleSideBar()" style="height:6vh"><p class="button-text">Close</p></button>
+
+                <aside class="table-of-content">
+                    <h2 class="menu-heading scrollingElem">Table of Contents</h2>
+
+                    <!-- main menu of table of content -->
+                    <ul class="main-menu">
+                        <li class="menu-sub-heading">
+                          <a href="#1.0">1. Introduction</a>
+                        </li>
+                        <ul class="sub-menu">
+                          <li><a href="#1.1">1.1 Placeholder</a></li>
+                        </ul>
+
+                        <li class="menu-sub-heading">
+                            <a href="#ref">References</a>
+                        </li>
+                            
+
+                    </ul>
+                </aside>
+            </div>
+            <main class="main" style="margin-left:5vw; margin-right:5vw">
+    
+                <!-- section -->
+                <h2 id="1.0">1. Introduction</h2>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+
+                <h2 id="ref">References</h2>
+                
+                <h3>Text</h3>
+                <p id="ref-1">
+                    Source 1
+                </p>
+
+                <h3>Images</h3>
+                <p id="ref-2">
+                    Image Source 1
+                </p>
+
+            </main>
+        </div>
+
+        <div class="spacer"></div>
+        
+
+        <footer class="extend">
+            <div class="left-footer">
+                <p>Content and HTML/CSS code created by ChatGPT and Microsoft Copilot.</p>
+                <p>Modified by template provided by CS 299/PHIL 222</p>
+            </div>
+            <div class="right-footer">
+                <a href="https://hits.sh/cs.wellesley.edu/~eh111/cs299-portfolio/index.html/"></a>
+                    <img style="height:3vh; width:auto" alt="Hits" src="https://hits.sh/cs.wellesley.edu/~eh111/cs299-portfolio/index.html.svg"/>
+                </a>
+                <p>~eh111</p>
+            </div>
+        </footer>
+</body>
+</html>

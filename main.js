@@ -272,7 +272,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
      // Open the default tab
     document.querySelector('.tab button').click();
+})
 
+document.addEventListener('DOMContentLoaded', function() {
     var links = document.querySelectorAll("td a");
             links.forEach(function(link) {
                 link.addEventListener("click", function(event) {
@@ -283,6 +285,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     showTimestamps(link.getAttribute("onclick").split("'")[1], link.getAttribute("onclick").split("'")[3], link);
                 });
             });
+        })
+
+document.addEventListener('DOMContentLoaded', function() {
     // Call your addRapperCircle function with desired parameters
     addVerticalLines(10);
     
