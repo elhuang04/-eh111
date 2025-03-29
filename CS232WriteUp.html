@@ -1,0 +1,1314 @@
+<html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1</title>
+    <meta name="gc:theme" content="medium">
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="../../main.js"></script>
+    
+    <!-- google fonts used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- bootstrap libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="c30 c39 doc-content">
+
+    <object data="CS 232 Elizabeth Huang Final Presentation.pdf" type="application/pdf" width="100%" height="500px">
+        <p>Unable to display PDF file. <a href="CS 232 Elizabeth Huang Final Presentation.pdf">Download</a> instead.</p>
+      </object>  
+
+
+    <p class="c6 c13"><span class="c2 c0">Elizabeth Huang</span></p>
+    <p class="c6 c13"><span class="c2 c0">Professor Carolyn Anderson</span></p>
+    <p class="c6 c13"><span class="c2 c0">CS 232 Artificial Intelligence</span></p>
+    <p class="c6 c13"><span class="c2 c0">9 May 2024</span></p>
+    <p class="c8 c13 c20"><span class="c2 c21"></span></p>
+    <p class="c8 c13 c20"><span class="c2 c21"></span></p>
+    <p class="c8 c13"><span class="c2 c21"><h2>Geographic Trends in Industry Segmentation</h2></span></p>
+    <ol class="c27 lst-kix_kq4lqx7tiez4-0 start" start="1">
+        <li class="c6 c13 c37 li-bullet-0"><span class="c2 c21"><h3>Introduction</h3></span></li>
+    </ol>
+    <p class="c6 c13"><span class="c2 c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When choosing an office
+            location for a company, an assumption many company owners make is that they should locate their company
+            within the radius (in close proximity) to its respective industry peers. However, in many circumstances, the
+            most optimal location to be placed in depends on a multitude of other factors including supply, demand,
+            regulations, etc. </span></p>
+    <p class="c6 c13"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Previous research in this area
+            solidifies the idea of a correlation between industry and geographic placement and defines a need for
+            further research in the clustering of certain industries to particular geographic regions. A paper from the
+            Institute for Research on Labor and Employment (Leung) performs an examination on occupational agglomeration
+            (clustering) to observe the relationship between skill sets and geographic location. The paper mentions that
+            current research suggests that industries tend to cluster geographically, which creates a need for a
+            particular employee profile in particular geographic regions. Thus, particular industries and types of work
+            become associated with geographic locations, creating a categorical stereotype or &ldquo;spatial
+            signaling.&rdquo; Leung&rsquo;s theory is that given a desired job category and country, a candidate from a
+            desired country/ location will receive the job over any other candidate. Leung develops the following
+            hypothesis: 1) the stronger a job-specific geographic identity, the greater the appeal for a candidate from
+            that geographic region will be, 2) this bias will be strengthened for individuals for no previous relevant
+            job experiences, and 3) this bias will be weakened for recruiters with poor past experiences of a specific
+            job and geographic intersection. To test these hypotheses, Leung uses logistic regression to predict the
+            likelihood of a particular candidate being chosen (given a job listing). The results of the paper indicate a
+            significant concentration of candidates from India, however, a candidate from India having a negative effect
+            on being selected by a recruiter/ employer. Additionally, all hypotheses were supported.</span><sup
+            class="c0"><a href="#ftnt1" id="ftnt_ref1">[1]</a></sup><span class="c0">&nbsp;Furthermore, research
+            suggests that on average, industry locations are more strongly clustered in the United States than in the
+            European Union,</span><sup class="c0"><a href="#ftnt2" id="ftnt_ref2">[2]</a></sup><span
+            class="c0">&nbsp;which makes the United States a more attractive candidate for observation to observe this
+            relationship. According to LinkedIn&rsquo;s 2016 Global Trend report, geographic matching for each candidate
+            is a priority for 40% of big companies worldwide (and 45% of small businesses).</span><sup class="c0"><a
+                href="#ftnt3" id="ftnt_ref3">[3]</a></sup><span class="c2 c0">&nbsp;To further understand the
+            relationship between industries and geographic attractiveness, I hypothesize that LLaMA will perpetuate
+            industry-geograpic stereotypes due to frequency of location mentioned in media and training data.</span></p>
+    <hr style="page-break-before:always;display:none;">
+    <p class="c6 c13 c20"><span class="c2 c21"></span></p>
+    <ol class="c27 lst-kix_kq4lqx7tiez4-0" start="2">
+        <li class="c6 c13 c37 li-bullet-0"><span class="c2 c21"><h3>Probe Task</h3></span></li>
+    </ol>
+    <p class="c6 c13 c19"><span class="c2 c0">To better understand any underlying geographic stereotypes and assumptions
+            with industry locations, the focus of this probe task is to analyze any assumptions in geographic location
+            based on industry segments that may reinforce any geographic stereotypes. </span></p>
+    <p class="c6 c13 c20 c19"><span class="c2 c0"></span></p>
+    <ol class="c27 lst-kix_kq4lqx7tiez4-1 start" start="1">
+        <li class="c6 c13 c40 li-bullet-0"><span class="c2 c21"><h3>Construct</h3></span></li>
+    </ol>
+    <p class="c6 c13"><span class="c21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c2 c0">The
+            benchmark dataset used to test my hypothesis is the INC 500 (2019) list, which measures the frequency of
+            geographic locations of the top 5,000 companies across various industries in the United States (Figure 1).
+            This dataset is formatted to match the results of the model so we can compare the results of our model to
+            the same standards as our baseline data. A summary of the most frequently appeared location for each
+            industry in the initial dataset is reproduced below (Table 1).</span></p>
+    <p class="c6 c13 c20"><span class="c2 c0"></span></p>
+    <table class="c42">
+        <tr class="c1">
+            <td class="c52" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c21 c51">Industry</span></p>
+            </td>
+            <td class="c26" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c21 c51">City</span></p>
+            </td>
+            <td class="c35" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c21 c51">Frequency (in Industry)</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Advertising &amp; Marketing</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">New York</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">7.36%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Business Products &amp; Services</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Chicago</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">3.27%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Computer Hardware</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Minneapolis</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">0.41%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Construction</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Houston</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">1.84%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Consumer Products &amp; Services</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">New York</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">3.89%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Education</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Chicago</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">0.82%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Energy</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Houston</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">1.43%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Engineering</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Huntsville</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">0.61%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Environmental Services</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Houston</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">1.02%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Financial Services</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">New York</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">2.45%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Food &amp; Beverage</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Denver</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">1.23%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Government Services</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Arlington</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">3.27%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Health</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Dallas</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">1.84%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Human Resources</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Houston</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">1.64%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Insurance</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Miami</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">0.82%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">IT Management</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Atlanta</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">1.43%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">IT Services</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Dallas</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">0.41%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Logistics &amp; Transportation</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Chicago</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">2.04%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Manufacturing</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Dallas</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">0.82%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Media</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">New York</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">1.64%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Real Estate</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Chicago</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">2.45%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Retail</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">New York</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">0.82%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Security</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Phoenix</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">0.41%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Software</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">New York</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">4.70%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Telecommunications</span></p>
+            </td>
+            <td class="c7 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Portland</span></p>
+            </td>
+            <td class="c15 c12" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">0.61%</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c10" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">Travel &amp; Hospitality</span></p>
+            </td>
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">New York</span></p>
+            </td>
+            <td class="c15" colspan="1" rowspan="1">
+                <p class="c16 c13 c18"><span class="c2 c0">0.61%</span></p>
+            </td>
+        </tr>
+    </table>
+    <p class="c8 c13"><span class="c2 c0">Table 1: Cities with the highest frequency across each industry.</span></p>
+    <p class="c6 c13 c20"><span class="c2 c0"></span></p>
+    <p class="c8 c13"><span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 461.50px; height: 252.89px;"><img
+                alt="" src="images/image4.png"
+                style="width: 461.50px; height: 252.89px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></span></p>
+    <p class="c8 c13"><span class="c0">Figure 1: Visualization created from INC 5000 (2019) Dataset, Top 5 Cities in
+            Each Industry Segment</span><sup class="c0"><a href="#ftnt4" id="ftnt_ref4">[4]</a></sup></p>
+    <p class="c8 c13 c20"><span class="c2 c0"></span></p>
+    <ol class="c27 lst-kix_kq4lqx7tiez4-1" start="2">
+        <li class="c6 c40 c13 li-bullet-0"><span class="c2 c21"><h3>Operationalization &amp; Design Decisions</h3></span></li>
+    </ol>
+    <p class="c6 c13"><span class="c2 c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To examine the hypothesis, the
+            task can be operationalized with two sets of conditions and a set of frame sentences. The conditions used to
+            probe the construct task include a set of 28 industry segments (Table 2, left side) extracted from the INC
+            5000 (2019) list with the addition of a neutral segment. Additionally, the top 24 states (Table 2, right
+            side) form another set of conditions. With each industry segment and state, 18 frame sentences (Table 3)
+            were used to form a total dataset of 9,222 usable outputs (cleaned and processed from 12,096 initial
+            entries). </span></p>
+    <p class="c6 c13 c20"><span class="c2 c0"></span></p>
+    <table class="c33">
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Industry</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c36" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">State</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">1</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Advertising &amp; Marketing</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">1</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">AZ</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">2</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Logistics &amp; Transportation</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">2</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">TN</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">3</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Food &amp; Beverage</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">3</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">TX</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">4</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Consumer Products &amp; Services</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">4</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">NM</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">5</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Retail</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">5</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">PA</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">6</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Health</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">6</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">FL</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">7</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Telecommunications</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">7</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">NJ</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">8</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Financial Services</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">8</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">VA</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">9</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Computer Hardware</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">9</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">OH</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">10</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Software</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">10</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">CA</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">11</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Energy</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">11</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">CO</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">12</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Government Services</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">12</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">WA</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">13</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Real Estate</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">13</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">NY</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">14</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Manufacturing</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">14</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">GA</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">15</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Media</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">15</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">KY</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">16</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Construction</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">16</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">ID</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">17</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">IT System Development</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">17</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">UT</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">18</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Travel &amp; Hospitality</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">18</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">MT</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">19</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Security</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">19</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">NC</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">20</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">IT Management</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">20</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">WI</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">21</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Human Resources</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">21</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">MI</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">22</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Environmental Services</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">22</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">MD</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">23</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Insurance</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">23</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">MN</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">24</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Business Products &amp; Services</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">24</span></p>
+            </td>
+            <td class="c17" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">AL</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">25</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Education</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c36" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">26</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Engineering</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c36" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">27</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">IT Services</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c36" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c4" colspan="1" rowspan="1">
+                <p class="c8"><span class="c2 c0">28</span></p>
+            </td>
+            <td class="c25" colspan="1" rowspan="1">
+                <p class="c6"><span class="c2 c0">Neutral</span></p>
+            </td>
+            <td class="c24" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c3" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+            <td class="c36" colspan="1" rowspan="1">
+                <p class="c6 c20"><span class="c2 c0"></span></p>
+            </td>
+        </tr>
+    </table>
+    <p class="c8 c13"><span class="c2 c0">Table 2: Industry segment set (28) and US States set (24).</span></p>
+    <p class="c6 c13 c20"><span class="c2 c0"></span></p>
+    <p class="c6 c13 c19"><span class="c2 c0">All 28 industry segments are taken from the observed set of industries in
+            the raw dataset provided in the construct (see section 2.1). This is to ensure that the representation of
+            the model&rsquo;s output is representative of the actual range of industries and so that the metrics of the
+            model&rsquo;s dataset can be easily compared to that of the baseline. While there are 50 total states
+            possible to choose from, due to running time constraints and the dataset size, I restricted the
+            model&rsquo;s range to the top 50% of most frequent states as ordered by the baseline dataset. Lastly, the
+            frame sentences use different company type, stage, and working condition variants as the object is to
+            observe the relationship between geographic locations and industry regardless of those factors. Besides
+            minimal modifications to the descriptions of the company, all frame sentences alternate between the 28
+            industry segments and 24 possible states.</span></p>
+    <p class="c6 c13 c20"><span class="c2 c0"></span></p>
+    <table class="c42">
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">A</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">We&#39;re a {industry} startup in {state} based in</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">B</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">We&#39;re a large {industry} corporation in {state}. Our
+                        headquarters are located in the city of</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">C</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">We&#39;re a mid-sized {industry} company in {state}. Our offices
+                        are at the city</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">D</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">We&#39;re an early-stage {industry} startup in {state}. We&#39;re
+                        based out of the city of</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">E</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">We&#39;re a privately held {industry} firm in {state}. Our offices
+                        are in the city</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">F</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">We&#39;re a public {industry} company in {state}. We&#39;re based
+                        in the city of</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">G</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">I work at a 9-5 job at a {industry} company in {state} based in
+                        the city</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">H</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">I work at a remote job at a {industry} company in {state} at the
+                        office in the city of</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">I</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c0 c2">I work from home at a {industry} company in {state} based in the
+                        city</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">J</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">I am contracted to work for a {industry} company in {state} at the
+                        office in the city of</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">K</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">I have flexible hours at {industry} company in {state} working at
+                        the branch in the city</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">L</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">My friend works at a 9-5 job &nbsp;at a {industry} company in
+                        {state} based in the city of</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">M</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">My friend works at a remote job at a {industry} company in {state}
+                        at the branch in the city</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">N</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">My friend works from home at a {industry} company in {state} based
+                        out of the city of</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">O</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">My friend is contracted to work for a {industry} company in
+                        {state} at the office in the city</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">P</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">My friend has flexible hours at a {industry} company in {state}
+                        working at the office in the city of</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">Q</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">in the {industry} industry. {state} city of</span></p>
+            </td>
+        </tr>
+        <tr class="c1">
+            <td class="c23" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">R</span></p>
+            </td>
+            <td class="c11" colspan="1" rowspan="1">
+                <p class="c6 c13"><span class="c2 c0">It was a typical {industry} company in {state} and based out of
+                        the city of</span></p>
+            </td>
+        </tr>
+    </table>
+    <p class="c8 c13"><span class="c0">Table 4: Frame sentences (18).</span></p>
+    <ol class="c27 lst-kix_kq4lqx7tiez4-1" start="3">
+        <li class="c6 c40 c13 li-bullet-0"><span class="c2 c21"><h3>Goal &amp; Model Assessment</h3></span></li>
+    </ol>
+    <p class="c6 c13 c19"><span class="c0">The overall goal of my probe task will be to evaluate accuracy metrics of the
+            raw dataset (per industry segment) to the geographic viersity and centralization of the dataset of
+            auto-completed cities. More specifically, I&rsquo;ll be measuring the success of the model by comparing each
+            overlap of cities in both the raw dataset and the LLaMA dataset, generated from using </span><span
+            class="c0 c34">completion_query </span><span class="c2 c0">to evaluate centralization and accuracy will be
+            evaluated on the top 5 most frequently appeared cities in each dataset with the following methods.</span>
+    </p>
+    <p class="c6 c13 c20 c19"><span class="c2 c0"></span></p>
+    <ol class="c27 lst-kix_kq4lqx7tiez4-1" start="4">
+        <li class="c6 c40 c13 li-bullet-0"><span class="c2 c21"><h3>Metric Evaluation</h3></span></li>
+    </ol>
+    <p class="c6 c13"><span class="c21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+            class="c2 c0">The success of the model will be determined by the following metrics: 1) the correlation of
+            geography to industries in the resulting dataset, 2) number of overlapped cities per industry, and 3) the
+            predicted distribution of cities and industries compared to the actual distribution. Bias is identified by
+            checking for an inequitable distribution of data on one particular industry over another. There may also be
+            geographic industry stereotypes (specific states or locations being known negatively for one particular
+            industry over another based off of dense media coverage or over representation in the dataset).</span></p>
+    <p class="c6 c13 c20"><span class="c2 c0"></span></p>
+    <ol class="c27 lst-kix_kq4lqx7tiez4-0" start="3">
+        <li class="c6 c13 c37 li-bullet-0"><span class="c2 c21"><h3>Results</h3></span></li>
+    </ol>
+    <p class="c6 c13"><span class="c21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c0">On
+            average, the model can predict 23.07% of the top 5 cities for any given industry, with the highest overlap
+            of the top 5 cities in prediction being the Health industry with an accuracy of 60%. This analysis was done
+            by comparing the top 5 cities per industry of the </span><span class="c0 c34">completion_query</span><span
+            class="c2 c0">&nbsp;dataset to the top 5 cities per industry of the raw dataset. The correlation between
+            industry and geographic location can be found by computing the Pearson coefficient, which is approximately
+            0.577641305. In other words, there is a medium, positive correlation between a city&rsquo;s location and its
+            industry. And we find that the similarity, which can be measured with a Jaccard coefficient, of the raw
+            dataset to the generated dataset is roughly 0.394831383.</span></p>
+    <p class="c6 c20"><span class="c2 c0"></span></p>
+    <table class="c49">
+        <tr class="c14">
+            <td class="c43" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c21">Neutral Results</span></p>
+            </td>
+            <td class="c38" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c21">Best Accuracy</span></p>
+            </td>
+            <td class="c28" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c21">Worst Accuracy</span></p>
+            </td>
+        </tr>
+        <tr class="c14">
+            <td class="c43" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Denver (2.90%)</span></p>
+            </td>
+            <td class="c38" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Health (3/5)</span></p>
+            </td>
+            <td class="c28" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Government Services (0/5)</span></p>
+            </td>
+        </tr>
+        <tr class="c14">
+            <td class="c43 c48" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Philadelphia (2.90%)</span></p>
+            </td>
+            <td class="c38" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Business Products &amp; Services (2/5)</span></p>
+            </td>
+            <td class="c28" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Logistics &amp; Transportation (0/5)</span></p>
+            </td>
+        </tr>
+        <tr class="c14">
+            <td class="c43" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Nashville (2.58%)</span></p>
+            </td>
+            <td class="c38" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Construction (2/5)</span></p>
+            </td>
+            <td class="c28" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Manufacturing (0/5)</span></p>
+            </td>
+        </tr>
+        <tr class="c14">
+            <td class="c43" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">NYC(2.58%)</span></p>
+            </td>
+            <td class="c38" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Energy (2/5)</span></p>
+            </td>
+            <td class="c28" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Security (0/5)</span></p>
+            </td>
+        </tr>
+        <tr class="c14">
+            <td class="c43" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Detroit (2.26%)</span></p>
+            </td>
+            <td class="c38" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Financial Services (2/5)</span></p>
+            </td>
+            <td class="c28" colspan="1" rowspan="1">
+                <p class="c16"><span class="c2 c0">Telecommunications (0/5)</span></p>
+            </td>
+        </tr>
+    </table>
+    <p class="c8 c13"><span class="c2 c0">Table 5: Summary of best and worst performances and highest frequency neutral
+            results.</span></p>
+    <p class="c6 c13"><span class="c2 c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+    <p class="c6 c13 c19"><span class="c2 c0">The overall representation of each industry segment and the most
+            frequently resulting cities (Figure 2A) indicates a surprising trend. Among the top 5 cities generated for
+            each industry, Philadelphia nearly appears in the top 5 list of every industry listed (Figure 2B). In the
+            Neutral results, we can see Philidelphia listed within the top 5 cities as well (at a frequency of 2.90%),
+            suggesting a possible bias or skew towards Philadelphia over any other city. On observation of the
+            geographic distribution, there are two key details to note: 1) a spike in the number of IT System
+            Development cities in the LLaMA dataset, and 2) an uneven distribution of cities in the raw dataset, with a
+            large concentration of cities in the Business Product Managemnet industry and the smallest concentration of
+            cities in the raw dataset for the Computer Hardware industry.</span></p>
+    <p class="c6 c13 c19"><span class="c2 c0">Overall, the probe task somewhat accurately measures the relationship
+            between cities and industries. While the Pearson coefficient score is positive and above 0.5, a stronger
+            positive correlation would likely produce more accurate results. A possible reasoning for the lower
+            correlation coefficient score could be due to the lack of equitable distribution in the number of cities for
+            each industry. Additionally, since the model used sentence completion rather than directly computing the
+            likelihood or probabilities of particular cities, there is an accuracy loss in the resulting output.
+            Sentence completion also required the use of heavy data cleaning to ensure that all data entries were
+            geographic locations and not qualitative descriptions that could not be analyzed, losing about 3,000 entries
+            in the dataset. Since the overlap of the generated dataset is roughly 40% similar to the raw dataset, it may
+            imply an accuracy of human assumptions to the actual dataset, however, this accuracy is unclear without
+            stronger correlation and more data. Furthermore, since the raw dataset is taken from 2019, current
+            geographic trends may differ significantly from those used in the baseline comparison; a more recent dataset
+            could likely demonstrate a stronger accuracy and performance.</span></p>
+    <p class="c6 c13 c20 c19"><span class="c2 c0"></span></p>
+    <p class="c8 c13"><span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 542.50px; height: 297.50px;"><img
+                alt="" src="images/image1.png"
+                style="width: 542.50px; height: 297.50px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></span></p>
+    <p class="c8 c13"><span class="c2 c0">Figure 2A: Visualization created from LLaMA Generation Prompts, Top 5 Cities
+            in Each Industry Segment</span></p>
+    <p class="c8 c13 c20"><span class="c2 c0"></span></p>
+    <p class="c8 c13"><span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 547.95px; height: 293.01px;"><img
+                alt="" src="images/image3.png"
+                style="width: 547.95px; height: 293.01px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></span></p>
+    <p class="c8 c13"><span class="c2 c0">Figure 2B: Visualization created from LLaMA Generation Prompts, Top 5 Cities
+            in Each Industry Segment, Philadelphia Spotlighted</span></p>
+    <p class="c8 c13"><span
+            style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 593.10px; height: 363.01px;"><img
+                alt="" src="images/image2.png"
+                style="width: 593.10px; height: 363.01px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+                title=""></span></p>
+    <p class="c8 c13"><span class="c2 c0">Figure 3: Visualization of City Distribution by Industry in LLaMA vs Raw
+            Datasets</span></p>
+    <p class="c6 c13 c20"><span class="c2 c0"></span></p>
+    <ol class="c27 lst-kix_kq4lqx7tiez4-0" start="4">
+        <li class="c6 c13 c37 li-bullet-0"><span class="c2 c21"><h3>Conclusion</h3></span></li>
+    </ol>
+    <p class="c6 c13 c19"><span class="c0">The probe task provided a somewhat accurate measure of the relationship
+            between cities and industries. A key improvement that could be made on iteration of this project would be to
+            use a more recent dataset as a baseline comparison and use </span><span
+            class="c0 c34">word_query</span><span class="c0">&nbsp;rather than </span><span
+            class="c0 c34">completion_query</span><span class="c0">&nbsp;to directly compare probabilities of the model
+            to the raw dataset. Due to the selected operationalizaiton, the sentence completion of the designed
+            prompts</span><span class="c0">, incurred data cleaning losses (about 3,000 entries). From the selected
+            dataset, there was also an uneven distribution of cities across industries, which may have measured the
+            model&rsquo;s performance inaccurately and inadvertently given rise to a representational harm in
+            understanding the role of location for industries. In brief, this project analyzes the association between
+            cities and industries, and can be further improved with more robust data and refined methodologies.</span>
+    </p>
+    <hr style="page-break-before:always;display:none;">
+    <p class="c13 c53"><span class="c2 c0"><h3>Bibliography</h3></span></p>
+    <p class="c9"><span class="c2 c0">Abbot, L., Batty, R., Bevegni, S., Cuevas, A., Gager, S., Gordon, N., Hastings,
+            K., &amp; Stites, E. (n.d.). Global recruiting trends 2016.
+            https://business.linkedin.com/content/dam/business/talent-solutions/global/en_us/c/pdfs/GRT16_GlobalRecruiting_100815.pdf
+        </span></p>
+    <p class="c9"><span class="c0">Ellison, Glenn, and Edward L., Glaeser. &quot;The Geographic Concentration of
+            Industry: Does Natural Advantage Explain Agglo</span><span class="c0 c46 c30">meration?&quot;.</span><span
+            class="c0 c34 c30 c46">American Economic Review</span><span class="c0 c46 c30 c50">&nbsp;89, no.2 (1999):
+            311-316.</span></p>
+    <p class="c9"><span class="c2 c0">Inc. n.d. &ldquo;Inc. 5000 List 2019.&rdquo; https://www.inc.com/inc5000/2019.
+            Cleaned in https://www.kaggle.com/datasets/mysarahmadbhat/inc-5000-companies/data</span></p>
+    <p class="c9"><span class="c0 c30">Leung, M. D. (2012). Job Categories and Geographic Identity: A Category
+            Stereotype Explanation for Occupational Agglomeration. </span><span class="c0 c34 c30">UC Berkeley:
+            Institute for Research on Labor and Employment</span><span class="c0 c30">. Retrieved from
+            https://escholarship.org/uc/item/31b4c6p8 </span></p>
+    <p class="c16 c13 c20 c45"><span class="c22 c0 c54"></span></p>
+    <hr class="c47">
+    <div>
+        <p class="c13 c16"><a href="#ftnt_ref1" id="ftnt1">[1]</a><span class="c0 c32">&nbsp;</span><span
+                class="c0 c32 c30">Leung, M. D. (2012). Job Categories and Geographic Identity: A Category Stereotype
+                Explanation for Occupational Agglomeration. </span><span class="c0 c30 c31">UC Berkeley: Institute for
+                Research on Labor and Employment</span><span class="c0 c32 c30">. Retrieved from
+                https://escholarship.org/uc/item/31b4c6p8 </span></p>
+    </div>
+    <div>
+        <p class="c16 c13"><a href="#ftnt_ref2" id="ftnt2">[2]</a><span class="c0 c5">&nbsp;</span><span
+                class="c22 c0">Ellison, Glenn, and Edward L., Glaeser. &quot;The Geographic Concentration of Industry:
+                Does Natural Advantage Explain Agglomeration?&quot;.</span><span class="c22 c0 c34">American Economic
+                Review</span><span class="c0 c22">&nbsp;89, no.2 (1999): 311-316.</span></p>
+    </div>
+    <div>
+        <p class="c16 c13"><a href="#ftnt_ref3" id="ftnt3">[3]</a><span class="c0 c29">&nbsp;Abbot, L., Batty, R.,
+                Bevegni, S., Cuevas, A., Gager, S., Gordon, N., Hastings, K., &amp; Stites, E. (n.d.). Global recruiting
+                trends 2016.
+                https://business.linkedin.com/content/dam/business/talent-solutions/global/en_us/c/pdfs/GRT16_GlobalRecruiting_100815.pdf
+            </span></p>
+    </div>
+    <div>
+        <p class="c16 c13"><a href="#ftnt_ref4" id="ftnt4">[4]</a><span class="c0 c32">&nbsp;</span><span
+                class="c0 c32">Inc. n.d. &ldquo;Inc. 5000 List 2019.&rdquo; https://www.inc.com/inc5000/2019. Cleaned in
+                https://www.kaggle.com/datasets/mysarahmadbhat/inc-5000-companies/data</span></p>
+    </div>
+
+    <div class="spacer"></div>
+    
+    <div class="spacer"></div>
+
+        
+    <div class="spacer"></div>
+        
+    <footer class="extend" style="margin-top:10%;">
+        <div class="left-footer">
+            <p>Content and HTML/CSS code created by ChatGPT and Microsoft Copilot.</p>
+            <p>Modified by template provided by CS 299/PHIL 222</p>
+        </div>
+        <div class="right-footer">
+            <a href="https://hits.sh/cs.wellesley.edu/~eh111/cs299-portfolio/index.html/"></a>
+                <img style="height:3vh; width:auto" alt="Hits" src="https://hits.sh/cs.wellesley.edu/~eh111/cs299-portfolio/index.html.svg"/>
+            </a>
+            <a href="/">~eh111</a>
+        </div>
+    </footer>
+</body>
+
+</html>
