@@ -19,18 +19,3 @@ RewriteRule ^(.*)project4/index\.html$ https://cs.wellesley.edu/~eh111/cs299-por
 # Redirect for project5
 RewriteCond %{THE_REQUEST} /project5/index\.html [NC]
 RewriteRule ^(.*)project5/index\.html$ https://cs.wellesley.edu/~eh111/cs299-portfolio/project5/ [L,R=301]
-
-
-# === Redirects for course IDs ===
-RewriteRule ^cs111/?$ /[CS111] Final Project Presentation Slides - Elizabeth Huang.pdf [L,R=302]
-RewriteRule ^cs230/?$ /cs230.zip [L,R=302]
-RewriteRule ^cs231/?$ /CS_231_Paper_Template.pdf [L,R=302]
-RewriteRule ^cs232/?$ /CS232WriteUp.html [L,R=302]
-RewriteRule ^cs250/?$ https://github.com/Knockin-HQ [L,R=302]
-RewriteRule ^cs299/?$ /cs299-portfolio/ [L,R=302]
-RewriteRule ^cosc24/?$ /MoCap_HuangCashon.mp4 [L,R=302]
-RewriteRule ^cosc50/?$ https://github.com/CS50DartmouthWI25/nuggets-group-4/ [L,R=302]
-RewriteRule ^cosc63/?$ https://docs.google.com/presentation/d/1MLvIVAtgNKgP-PF1XZBnSMZNHC7hdUKrKOfEWyZknqU/edit?usp=drive_link [L,R=302]
-RewriteRule ^cosc29-06/?$ /ElizabethJessieOliver_VideoDemoWithCover.mp4 [L,R=302]
-RewriteRule ^cosc58/?$ https://github.com/cs58-sp25/yalnix-group-1 [L,R=302]
-RewriteRule ^cosc83/?$ https://github.com/elhuang04/COSC83-spring24-25-student [L,R=302]
